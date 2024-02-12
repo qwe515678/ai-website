@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
-import Hero from "@/components/hero/hero";
 import Header from "@/components/header/header";
 const montserrat = Unbounded({ subsets: ["latin", 'cyrillic', 'cyrillic-ext'] });
 
@@ -18,10 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className + ' bg-[#050505]'}>
-        <Header />
-        <Hero />
-        <div className="w-full max-w-6xl px-2">
-          {children}
+        <div className="">
+          <Header />
+          <div className="w-full max-w-6xl px-2 mx-auto">
+            {children}
+          </div>
         </div>
       </body>
     </html>

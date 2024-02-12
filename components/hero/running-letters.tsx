@@ -11,7 +11,7 @@ export default function RunningLetters() {
     let [sizes, setSizes] = useState<Sizes>({ rows: 50, columns: 50 });
 
     useEffect(() => {
-        setSizes({ rows: Math.floor(window.innerHeight /30), columns: Math.floor(window.innerWidth / 40) });
+        setSizes({ rows: Math.floor(window.innerHeight / 30), columns: Math.floor(window.innerWidth / 40) });
     }, []);
 
 
@@ -76,12 +76,25 @@ function getChar(): string {
 }
 
 interface CharProps {
-    highlighted: boolean;
+    highlighted: boolean,
+    char: string
 }
 
-function Char({ char, highlighted }: { char: string, highlighted: boolean }) {
+function Char({ char, highlighted }: CharProps) {
     return (
-        <motion.span variants={charVariants} whileHover='hovered' animate={highlighted ? 'bright' : 'usual'} className={` text-center min-h-5 text-xs transition-colors select-none`} suppressHydrationWarning draggable={false}>{char}</motion.span>
+        <div className="relative inline-block">
+            <div className="absolute inset-0 bg-transparent peer " />
+            <motion.span
+                variants={charVariants}
+                whileHover='hovered'
+                animate={highlighted ? 'bright' : 'usual'}
+                className={` text-center min-h-5 text-xs transition-colors select-none peer-hover:text-red-600`}
+                suppressHydrationWarning
+                draggable={false}
+            >
+                {char}
+            </motion.span>
+        </div>
     );
 }
 

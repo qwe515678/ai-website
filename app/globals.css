@@ -32,7 +32,10 @@ body {
   }
 }
 
+::selection {
+  @apply bg-green-300 text-black;
+}
 
-::selection{
-  @apply bg-green-300 text-black
+::-webkit-scrollbar {
+  width: 0;
 }
