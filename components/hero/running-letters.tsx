@@ -16,15 +16,15 @@ export default function RunningLetters() {
 
 
     return (
-        <div className="">
-            <div className="p-2 flex">
+        <div className={(sizes.columns === 50 && sizes.rows === 50) ? 'text-black' : ''}>
+            <div className="px-3 rounded flex h-[100dvh] overflow-hidden">
                 {Array(sizes.columns).fill(0).map((_, i) => {
                     return (
                         <Column key={i} sizes={sizes} />
                     );
                 })}
             </div>
-        </div>
+        </div >
     );
 }
 
@@ -52,11 +52,11 @@ function Column({ sizes }: { sizes: Sizes }) {
     }, [activeRow]);
 
     return (
-        <div className=" w-full flex flex-col justify-start">
+        <div className=" w-full flex flex-col justify-start overflow-scroll">
             {
                 chars.map((char, j) => {
                     return (
-                        <Char key={j} char={char} highlighted={j === activeRow} />
+                        <Char key={j} char={char} highlighted={j === activeRow} num={j} />
                     );
                 })
             }
@@ -77,18 +77,18 @@ function getChar(): string {
 
 interface CharProps {
     highlighted: boolean,
-    char: string
+    char: string,
+    num: number,
 }
 
-function Char({ char, highlighted }: CharProps) {
+function Char({ char, highlighted, num }: CharProps) {
     return (
         <div className="relative inline-block">
-            <div className="absolute inset-0 bg-transparent peer " />
             <motion.span
                 variants={charVariants}
                 whileHover='hovered'
                 animate={highlighted ? 'bright' : 'usual'}
-                className={` text-center min-h-5 text-xs transition-colors select-none peer-hover:text-red-600`}
+                className={` text-center min-h-5 text-xs transition-colors select-none`}
                 suppressHydrationWarning
                 draggable={false}
             >
