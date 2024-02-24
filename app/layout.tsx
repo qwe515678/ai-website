@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className + ' bg-[#050505]'}>
+      <body className={montserrat.className + ' bg-[#050505] dark'}>
         <div className="">
           <Header />
           <div className="w-full max-w-6xl px-2 mx-auto">

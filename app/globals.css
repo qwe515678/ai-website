@@ -39,3 +39,6 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
+h2{
+  @apply text-3xl font-bold tracking-wider
+}
