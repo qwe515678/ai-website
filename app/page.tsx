@@ -1,14 +1,18 @@
 import Hero from "@/components/hero/hero";
 import AiHistory from "@/components/sections/ai-history";
+import GettingStarted from "@/components/sections/getting-started";
 import WhatIsAI from "@/components/sections/what-is-ai";
 import WhereIsUsed from "@/components/sections/where-is-used";
+import { cn } from "@/lib/cn";
 import { ReactNode } from "react";
 
 export default function Home() {
   return (
     <div className=" flex flex-col gap-5">
       <section className="max-h-full overflow-hidden"><Hero /></section>
-      <Section>
+      <div className="min-h-dvh" />
+      <Section className="h-fit">
+        <WhatIsAI />
       </Section>
       <Section>
         <AiHistory />
@@ -16,14 +20,16 @@ export default function Home() {
       <Section>
         <WhereIsUsed />
       </Section>
-      <Section />
+      <Section>
+        <GettingStarted />
+      </Section>
     </div>
   );
 }
 
 function Section({ children, ...props }: { children?: ReactNode, } & React.HTMLAttributes<HTMLElement>) {
   return (
-    <section className="min-h-dvh border-b border-dashed py-4 overflow-hidden" {...props}>
+    <section className={cn("min-h-dvh border-b border-dashed py-4 overflow-hidden", props.className)} {...props}>
       {children}
     </section>
   );

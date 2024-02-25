@@ -110,8 +110,8 @@ const data = {
         "eventsVariants": {
             "closed": {
                 opacity: 0,
-                // translateX: 20,
-                // scaleY: 0.9
+                translateX: 20,
+                scaleY: 0.9
             },
             "open": {
                 opacity: 1,
@@ -124,6 +124,30 @@ const data = {
                 }
             }
         } as Variants
+    },
+    "getting-started": {
+        "required-skills": ['Python 3.6+', 'Jupyter Notebook (или любой другой IDE)', 'Базовые знания Python'],
+        "snippets": {
+            "installTensorFlow": `pip install tensorflow`,
+            "preprocessingData": `import tensorflow as tf
+
+            (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()`,
+            "modelCreation": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">model = tf.keras.models.Sequential([
+                tf.keras.layers.Flatten(input_shape=(<span class="hljs-number" style="color: rgb(255, 85, 255);">28</span>, <span class="hljs-number" style="color: rgb(255, 85, 255);">28</span>)),
+                tf.keras.layers.Dense(<span class="hljs-number" style="color: rgb(255, 85, 255);">128</span>, activation=<span class="hljs-string" style="color: rgb(255, 85, 255);">'relu'</span>),
+                tf.keras.layers.Dense(<span class="hljs-number" style="color: rgb(255, 85, 255);">10</span>, activation=<span class="hljs-string" style="color: rgb(255, 85, 255);">'softmax'</span>)
+              ])
+              </pre>`,
+            "modelCompilation": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">model.compile(optimizer=<span class="hljs-string" style="color: rgb(255, 85, 255);">'adam'</span>,
+              loss=<span class="hljs-string" style="color: rgb(255, 85, 255);">'sparse_categorical_crossentropy'</span>,
+              metrics=[<span class="hljs-string" style="color: rgb(255, 85, 255);">'accuracy'</span>])`,
+            "modelTraining": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">model.fit(x_train, y_train, epochs=<span class="hljs-number" style="color: rgb(255, 85, 255);">10</span>)</pre>`,
+            "modelEvaluation": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">test_loss, test_acc = model.evaluate(x_test, y_test, verbose=<span class="hljs-number" style="color: rgb(255, 85, 255);">2</span>)
+              print(<span class="hljs-string" style="color: rgb(255, 85, 255);">'\nТестовая точность:'</span>, test_acc)
+              </pre>`
+
+
+        }
     }
 
 }

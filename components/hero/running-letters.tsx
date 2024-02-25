@@ -1,5 +1,5 @@
 'use client'
-import { Variants, motion } from 'framer-motion';
+import { Variants, motion, useInView } from 'framer-motion';
 import React, { useState, useEffect, useRef } from 'react';
 
 type Sizes = {
@@ -31,16 +31,18 @@ export default function RunningLetters() {
 function Column({ sizes }: { sizes: Sizes }) {
     const [activeRow, setActiveRow] = useState(-1);
     const intervalDuration = Math.random() * 50 + 1;
-
+    const ref = useRef(null!)
+    const isInView = useInView(ref)
     const [chars, setChars] = useState(new Array(sizes.rows).fill('').map((_, index) => getChar()));
 
     useEffect(() => {
         const timerId = setInterval(() => {
+            if (!isInView) return
             setActiveRow((prev) => (prev + 1) % sizes.rows);
         }, intervalDuration);
 
         return () => clearInterval(timerId);
-    }, [sizes.rows, intervalDuration]);
+    }, [sizes.rows, intervalDuration, isInView]);
 
     useEffect(() => {
         // Update the character for the active row
@@ -52,7 +54,7 @@ function Column({ sizes }: { sizes: Sizes }) {
     }, [activeRow]);
 
     return (
-        <div className=" w-full flex flex-col justify-start overflow-scroll">
+        <div ref={ref} className=" w-full flex flex-col justify-start overflow-scroll">
             {
                 chars.map((char, j) => {
                     return (

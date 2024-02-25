@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
+import Image from "next/image";
 const montserrat = Unbounded({ subsets: ["latin", 'cyrillic', 'cyrillic-ext'] });
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className + ' bg-[#050505] dark'}>
+      <body className={montserrat.className + ' bg-black dark relative'}>
         <div className="">
           <Header />
           <div className="w-full max-w-6xl px-2 mx-auto">
