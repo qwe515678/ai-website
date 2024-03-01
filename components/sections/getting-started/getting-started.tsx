@@ -24,10 +24,11 @@ export default function GettingStarted() {
                     })}
                 </ul>
                 <div className="">
-                    {Object.keys(data["getting-started"].snippets).map((key: any, i)=>{
-                        const obj = data["getting-started"].snippets[key]
+                    {Object.keys(data["getting-started"].snippets).map((key: any, i) => {
+                        const snippets: any = data["getting-started"].snippets
+                        const obj = snippets[key]
                         data["getting-started"].snippets
-                        return(
+                        return (
                             <Code key={i} code={obj.code}>
                                 {obj.codeHighlighted}
                             </Code>
