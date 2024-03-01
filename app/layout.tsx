@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
-import Image from "next/image";
 const montserrat = Unbounded({ subsets: ["latin", 'cyrillic', 'cyrillic-ext'] });
 
 export const metadata: Metadata = {

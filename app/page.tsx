@@ -1,6 +1,6 @@
 import Hero from "@/components/hero/hero";
 import AiHistory from "@/components/sections/ai-history";
-import GettingStarted from "@/components/sections/getting-started";
+import GettingStarted from "@/components/sections/getting-started/getting-started";
 import WhatIsAI from "@/components/sections/what-is-ai";
 import WhereIsUsed from "@/components/sections/where-is-used";
 import { cn } from "@/lib/cn";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className=" flex flex-col gap-5">
       <section className="max-h-full overflow-hidden"><Hero /></section>
-      <div className="min-h-dvh" />
+      <div className="min-h-[100vh]" />
       <Section className="h-fit">
         <WhatIsAI />
       </Section>

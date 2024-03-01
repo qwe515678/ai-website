@@ -1,7 +1,7 @@
-import data from "@/lib/data"
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import data from "@/lib/data"
+import Code from "./Code"
+
 
 export default function GettingStarted() {
     return (
@@ -24,8 +24,18 @@ export default function GettingStarted() {
                     })}
                 </ul>
                 <div className="">
+                    {Object.keys(data["getting-started"].snippets).map((key: any, i)=>{
+                        const obj = data["getting-started"].snippets[key]
+                        data["getting-started"].snippets
+                        return(
+                            <Code key={i} code={obj.code}>
+                                {obj.codeHighlighted}
+                            </Code>
+                        )
+                    })}
                 </div>
             </div>
         </div>
     )
 }
+

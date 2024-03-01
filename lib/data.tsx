@@ -1,6 +1,42 @@
-import { Variants } from "framer-motion";
-
+import { Variants, Variants } from "framer-motion";
 const data = {
+    "variants": {
+        "eventsVariants": {
+            "closed": {
+                opacity: 0,
+                translateX: 20,
+                scaleY: 0.9
+            },
+            "open": {
+                opacity: 1,
+                translateX: 0,
+                scaleY: 1
+            },
+            "hover": {
+                transition: {
+                    duration: 0.4
+                }
+            }
+        } as Variants,
+
+        "copyVariants": {
+            "exit": {
+                scaleY: .2,
+                opacity: 0,
+                translateY: -2
+            },
+            "initial": {
+                scaleY: .2,
+                opacity: 0,
+                translateY: 2
+            },
+            "animate": {
+                scaleY: 1,
+                opacity: 1,
+                translateY: 0
+            } as Variants
+        }
+    },
     "what-is-ai": {
         "events": [
             {
@@ -107,47 +143,146 @@ const data = {
                 "event": "Ожидается, что искусственный интеллект будет играть еще более значительную роль в бизнесе и образовании, с увеличением числа профессий, требующих знаний в области ИИ. Появление новых должностей, таких как главный директор по искусственному интеллекту (CAIO), указывает на растущую роль ИИ в стратегическом планировании и внедрении.",
                 "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence_in_business"
             }],
-        "eventsVariants": {
-            "closed": {
-                opacity: 0,
-                translateX: 20,
-                scaleY: 0.9
-            },
-            "open": {
-                opacity: 1,
-                translateX: 0,
-                scaleY: 1
-            },
-            "hover": {
-                transition: {
-                    duration: 0.4
-                }
-            }
-        } as Variants
     },
     "getting-started": {
         "required-skills": ['Python 3.6+', 'Jupyter Notebook (или любой другой IDE)', 'Базовые знания Python'],
         "snippets": {
-            "installTensorFlow": `pip install tensorflow`,
-            "preprocessingData": `import tensorflow as tf
+            "installTensorFlow":
+            {
+                "code": "pip install tensorflow",
+                "codeHighlighted": (
 
-            (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()`,
-            "modelCreation": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">model = tf.keras.models.Sequential([
-                tf.keras.layers.Flatten(input_shape=(<span class="hljs-number" style="color: rgb(255, 85, 255);">28</span>, <span class="hljs-number" style="color: rgb(255, 85, 255);">28</span>)),
-                tf.keras.layers.Dense(<span class="hljs-number" style="color: rgb(255, 85, 255);">128</span>, activation=<span class="hljs-string" style="color: rgb(255, 85, 255);">'relu'</span>),
-                tf.keras.layers.Dense(<span class="hljs-number" style="color: rgb(255, 85, 255);">10</span>, activation=<span class="hljs-string" style="color: rgb(255, 85, 255);">'softmax'</span>)
-              ])
-              </pre>`,
-            "modelCompilation": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">model.compile(optimizer=<span class="hljs-string" style="color: rgb(255, 85, 255);">'adam'</span>,
-              loss=<span class="hljs-string" style="color: rgb(255, 85, 255);">'sparse_categorical_crossentropy'</span>,
-              metrics=[<span class="hljs-string" style="color: rgb(255, 85, 255);">'accuracy'</span>])`,
-            "modelTraining": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">model.fit(x_train, y_train, epochs=<span class="hljs-number" style="color: rgb(255, 85, 255);">10</span>)</pre>`,
-            "modelEvaluation": `<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(0, 0, 0); color: rgb(170, 170, 170);">test_loss, test_acc = model.evaluate(x_test, y_test, verbose=<span class="hljs-number" style="color: rgb(255, 85, 255);">2</span>)
-              print(<span class="hljs-string" style="color: rgb(255, 85, 255);">'\nТестовая точность:'</span>, test_acc)
-              </pre>`
+                    <div
+                        className=' border rounded  px-3 py-1 w-full flex-col'
+                    >
+                        pip install tensorflow
+                    </div>
 
+                )
+            },
+            "loadingData": {
+                "code": `import tensorflow as tf
 
+                (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()`,
+                "codeHighlighted": (
+
+                    <div className=' border rounded  px-3 py-1 w-full flex-col '>
+                        <div className=""></div>
+                        <span style={{ color: 'rgb(197, 200, 198); font-weight:400' }} className="">
+                            <div className="">
+
+                                <span style={{ color: "rgb(178, 148, 187)" }}>import</span> tensorflow as <span style={{ color: "rgb(129, 162, 190)" }}>tf</span>
+                            </div>
+
+                            <span style={{ color: 'rgb(222, 147, 95)' }}>(x_train, y_train)</span>, <span style={{ color: 'rgb(222, 147, 95)' }}>(x_test, y_test)</span> </span>= tf.keras.datasets.mnist.<span style={{ color: 'rgb(222, 147, 95)' }}>load_data</span>()
+                    </div>
+
+                )
+            },
+            "preprocessingData":
+            {
+                "code": `x_train = x_train.astype('float32') / 255.0
+                x_test = x_test.astype('float32') / 255.0`,
+                "codeHighlighted": (
+
+                    <div
+                        className=' border rounded  px-3 py-1 w-full flex-col'
+                    >
+                        <div className="">
+                            <span style={{ color: "rgb(197, 200, 198)" }}>
+                                x_train
+                            </span>
+                            = x_train.astype(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;float32&#x27;</span>) /
+                            <span style={{ color: "rgb(222, 147, 95)" }}>255.0</span>
+                        </div>
+                        <span style={{ color: "rgb(197, 200, 198)" }}>x_test</span>
+                        = x_test.astype(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;float32&#x27;</span>) /
+                        <span style={{ color: "rgb(222, 147, 95)" }}>255.0</span>
+                    </div>
+
+                )
+            },
+            "modelCreation":
+            {
+                "code": `model = tf.keras.models.Sequential([
+                    tf.keras.layers.Flatten(input_shape=(28, 28)),
+                    tf.keras.layers.Dense(128, activation='relu'),
+                    tf.keras.layers.Dense(10, activation='softmax')
+                  ])`,
+                "codeHighlighted": (
+
+                    <div
+                        className=' border rounded  px-3 py-1 w-full flex-col'
+                    >
+                        <span style={{ color: "rgb(197, 200, 198)" }}>model</span> = tf.keras.models.Sequential([
+                        tf.keras.layers.Flatten(input_shape=(<span style={{ color: "rgb(222, 147, 95)" }}>28</span>, <span style={{ color: "rgb(222, 147, 95)" }}>28</span>)),
+                        tf.keras.layers.Dense(<span style={{ color: "rgb(222, 147, 95)" }}>128</span>, activation=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;relu&#x27;</span>),
+                        tf.keras.layers.Dense(<span style={{ color: "rgb(222, 147, 95)" }}>10</span>, activation=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;softmax&#x27;</span>)
+                        ])
+                    </div>
+
+                )
+            },
+            "modelCompilation":
+            {
+                "code": `model.compile(optimizer='adam',
+                loss='sparse_categorical_crossentropy',
+                metrics=['accuracy'])`,
+                "codeHighlighted": (
+
+                    <div
+                        className=' border rounded  px-3 py-1 w-full flex-col'
+                    >
+                        model.<span style={{ color: "rgb(222, 147, 95)" }}>compile</span>(optimizer=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;adam&#x27;</span>,
+                        loss=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;sparse_categorical_crossentropy&#x27;</span>,
+                        metrics=[<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;accuracy&#x27;</span>])
+                    </div>
+
+                )
+            },
+            "modelTraining":
+            {
+                "code": `model.fit(x_train, y_train, epochs=10)                `,
+                "codeHighlighted": (
+
+                    <div
+                        className=' border rounded  px-3 py-1 w-full flex-col'
+                    >
+                        model<span style={{ color: "rgb(204, 102, 102)" }}>.fit</span>(x_train, y_train, epochs=<span style={{ color: "rgb(222, 147, 95)" }}>10</span>)
+                    </div>
+
+                )
+            },
+            "modelEvaluation":
+            {
+                "code": `test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+                print('\nТестовая точность:', test_acc)`,
+                "codeHighlighted": (
+
+                    <div
+                        className=' border rounded  px-3 py-1 w-full flex-col'
+                    >
+                        test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+                        <span style={{ color: "rgb(222, 147, 95)" }}>print</span>(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;\nТестовая точность:&#x27;</span>, test_acc)
+                    </div>
+
+                )
+            },
+            "savingModel":
+            {
+                "code": `model.save('mnist_model.h5')`,
+                "codeHighlighted": (
+
+                    <div
+                        className=' border rounded  px-3 py-1 w-full flex-col'
+                    >
+                        model.save(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;mnist_model.h5&#x27;</span>)
+                    </div>
+
+                )
+            }
         }
+
     }
 
 }
