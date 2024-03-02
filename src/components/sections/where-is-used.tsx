@@ -12,6 +12,7 @@ import {
     IconSignature,
     IconTableColumn,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 export default function BentoGridDemo() {
     return (
@@ -25,27 +26,31 @@ export default function BentoGridDemo() {
                         description={item.description}
                         header={item.header}
                         icon={item.icon}
-                        className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+                        className={i === 3 || i === 6 ? "md:col-span-2" : "" + ' '}
                     />
                 ))}
             </BentoGrid>
         </div>
     );
 }
-const Skeleton = () => (
-    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-);
+function Skeleton({ src = 'fun.svg', alt = 'fun', ...props }: { src?: string, alt?: string }) {
+    return (
+        <div className="flex flex-1 w-full h-full  min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 justify-center items-center">
+            <Image src={'/whereIsUsed/' + src} alt={alt} width={200} height={400} {...props} />
+        </div>
+    )
+}
 const items = [
     {
         title: "Здравоохранение",
         description: "Окунитесь в мир, где болезни становятся историей, а продолжительность жизни достигает невиданных высот.",
-        header: <Skeleton />,
+        header: <Skeleton src="health.svg" />,
         icon: <IconHealthRecognition className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "Образование",
         description: "Познайте невероятные возможности, которые открывает персонализированное обучение, с помощью ИИ.",
-        header: <Skeleton />,
+        header: <Skeleton src="science.svg"/>,
         icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     },
     {

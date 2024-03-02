@@ -1,4 +1,5 @@
-import {  Variants } from "framer-motion";
+import { Variants } from "framer-motion";
+import { FaPython } from "react-icons/fa";
 const data = {
     "variants": {
         "eventsVariants": {
@@ -145,142 +146,160 @@ const data = {
             }],
     },
     "getting-started": {
-        "required-skills": ['Python 3.6+', 'Jupyter Notebook (или любой другой IDE)', 'Базовые знания Python'],
+        "required-skills": [{ link: 'https://docs.python.org/3/', text: 'Python 3.6+' }, { link: 'https://jupyter.org/', text: 'Jupyter Notebook (или любой другой IDE)' }, { link: 'https://roadmap.sh/python', text: 'Базовые знания Python' }],
         "snippets": {
-            "installTensorFlow":
-            {
-                "code": "pip install tensorflow",
-                "codeHighlighted": (
+            "langIcon": <FaPython />,
+            "codeInfo": [
 
-                    <div
-                        className=' border rounded  px-3 py-1 w-full flex-col'
-                    >
-                        pip install tensorflow
-                    </div>
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": "pip install tensorflow",
+                    "name": 'shell',
+                    "codeHighlighted": (
+                        <div
+                            className=''
+                        >
+                            pip install tensorflow
+                        </div>
 
-                )
-            },
-            "loadingData": {
-                "code": `import tensorflow as tf
+                    )
+                },
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": `import tensorflow as tf
 
                 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()`,
-                "codeHighlighted": (
+                    "name": 'main.py',
+                    "codeHighlighted": (
 
-                    <div className=' border rounded  px-3 py-1 w-full flex-col '>
-                        <div className=""></div>
-                        <span style={{ color: 'rgb(197, 200, 198); font-weight:400' }} className="">
-                            <div className="">
+                        <div className=' '>
+                            <div className=""></div>
+                            <span style={{ color: 'rgb(197, 200, 198); font-weight:400' }} className="">
+                                <div className="">
 
-                                <span style={{ color: "rgb(178, 148, 187)" }}>import</span> tensorflow as <span style={{ color: "rgb(129, 162, 190)" }}>tf</span>
-                            </div>
+                                    <span style={{ color: "rgb(178, 148, 187)" }}>import</span> tensorflow as <span style={{ color: "rgb(129, 162, 190)" }}>tf</span>
+                                </div>
 
-                            <span style={{ color: 'rgb(222, 147, 95)' }}>(x_train, y_train)</span>, <span style={{ color: 'rgb(222, 147, 95)' }}>(x_test, y_test)</span> </span>= tf.keras.datasets.mnist.<span style={{ color: 'rgb(222, 147, 95)' }}>load_data</span>()
-                    </div>
+                                <span style={{ color: 'rgb(222, 147, 95)' }}>(x_train, y_train)</span>, <span style={{ color: 'rgb(222, 147, 95)' }}>(x_test, y_test)</span> </span>= tf.keras.datasets.mnist.<span style={{ color: 'rgb(222, 147, 95)' }}>load_data</span>()
+                        </div>
 
-                )
-            },
-            "preprocessingData":
-            {
-                "code": `x_train = x_train.astype('float32') / 255.0
+                    )
+                },
+
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": `x_train = x_train.astype('float32') / 255.0
                 x_test = x_test.astype('float32') / 255.0`,
-                "codeHighlighted": (
+                    "name": 'main.py',
+                    "codeHighlighted": (
 
-                    <div
-                        className=' border rounded  px-3 py-1 w-full flex-col'
-                    >
-                        <div className="">
-                            <span style={{ color: "rgb(197, 200, 198)" }}>
-                                x_train
-                            </span>
-                            = x_train.astype(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;float32&#x27;</span>) /
+                        <div
+                            className=''
+                        >
+                            <div className="">
+                                <span style={{ color: "rgb(197, 200, 198)" }}>
+                                    x_train
+                                </span>
+                                = x_train.astype(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;float32&#x27;</span>) /
+                                <span style={{ color: "rgb(222, 147, 95)" }}>255.0</span>
+                            </div>
+                            <span style={{ color: "rgb(197, 200, 198)" }}>x_test</span>
+                            = x_test.astype(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;float32&#x27;</span>) /
                             <span style={{ color: "rgb(222, 147, 95)" }}>255.0</span>
                         </div>
-                        <span style={{ color: "rgb(197, 200, 198)" }}>x_test</span>
-                        = x_test.astype(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;float32&#x27;</span>) /
-                        <span style={{ color: "rgb(222, 147, 95)" }}>255.0</span>
-                    </div>
 
-                )
-            },
-            "modelCreation":
-            {
-                "code": `model = tf.keras.models.Sequential([
+                    )
+                },
+
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": `model = tf.keras.models.Sequential([
                     tf.keras.layers.Flatten(input_shape=(28, 28)),
                     tf.keras.layers.Dense(128, activation='relu'),
                     tf.keras.layers.Dense(10, activation='softmax')
                   ])`,
-                "codeHighlighted": (
+                    "name": 'main.py',
+                    "codeHighlighted": (
 
-                    <div
-                        className=' border rounded  px-3 py-1 w-full flex-col'
-                    >
-                        <span style={{ color: "rgb(197, 200, 198)" }}>model</span> = tf.keras.models.Sequential([
-                        tf.keras.layers.Flatten(input_shape=(<span style={{ color: "rgb(222, 147, 95)" }}>28</span>, <span style={{ color: "rgb(222, 147, 95)" }}>28</span>)),
-                        tf.keras.layers.Dense(<span style={{ color: "rgb(222, 147, 95)" }}>128</span>, activation=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;relu&#x27;</span>),
-                        tf.keras.layers.Dense(<span style={{ color: "rgb(222, 147, 95)" }}>10</span>, activation=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;softmax&#x27;</span>)
-                        ])
-                    </div>
+                        <div
+                            className=''
+                        >
+                            <span style={{ color: "rgb(197, 200, 198)" }}>model</span> = tf.keras.models.Sequential([
+                            tf.keras.layers.Flatten(input_shape=(<span style={{ color: "rgb(222, 147, 95)" }}>28</span>, <span style={{ color: "rgb(222, 147, 95)" }}>28</span>)),
+                            tf.keras.layers.Dense(<span style={{ color: "rgb(222, 147, 95)" }}>128</span>, activation=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;relu&#x27;</span>),
+                            tf.keras.layers.Dense(<span style={{ color: "rgb(222, 147, 95)" }}>10</span>, activation=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;softmax&#x27;</span>)
+                            ])
+                        </div>
 
-                )
-            },
-            "modelCompilation":
-            {
-                "code": `model.compile(optimizer='adam',
+                    )
+                },
+
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": `model.compile(optimizer='adam',
                 loss='sparse_categorical_crossentropy',
                 metrics=['accuracy'])`,
-                "codeHighlighted": (
+                    "name": 'main.py',
+                    "codeHighlighted": (
 
-                    <div
-                        className=' border rounded  px-3 py-1 w-full flex-col'
-                    >
-                        model.<span style={{ color: "rgb(222, 147, 95)" }}>compile</span>(optimizer=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;adam&#x27;</span>,
-                        loss=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;sparse_categorical_crossentropy&#x27;</span>,
-                        metrics=[<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;accuracy&#x27;</span>])
-                    </div>
+                        <div
+                            className=''
+                        >
+                            model.<span style={{ color: "rgb(222, 147, 95)" }}>compile</span>(optimizer=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;adam&#x27;</span>,
+                            loss=<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;sparse_categorical_crossentropy&#x27;</span>,
+                            metrics=[<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;accuracy&#x27;</span>])
+                        </div>
 
-                )
-            },
-            "modelTraining":
-            {
-                "code": `model.fit(x_train, y_train, epochs=10)                `,
-                "codeHighlighted": (
+                    )
+                },
 
-                    <div
-                        className=' border rounded  px-3 py-1 w-full flex-col'
-                    >
-                        model<span style={{ color: "rgb(204, 102, 102)" }}>.fit</span>(x_train, y_train, epochs=<span style={{ color: "rgb(222, 147, 95)" }}>10</span>)
-                    </div>
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": `model.fit(x_train, y_train, epochs=10)                `,
+                    "name": 'main.py',
+                    "codeHighlighted": (
 
-                )
-            },
-            "modelEvaluation":
-            {
-                "code": `test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+                        <div
+                            className=''
+                        >
+                            model<span style={{ color: "rgb(204, 102, 102)" }}>.fit</span>(x_train, y_train, epochs=<span style={{ color: "rgb(222, 147, 95)" }}>10</span>)
+                        </div>
+
+                    )
+                },
+
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": `test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
                 print('\nТестовая точность:', test_acc)`,
-                "codeHighlighted": (
+                    "name": 'main.py',
+                    "codeHighlighted": (
 
-                    <div
-                        className=' border rounded  px-3 py-1 w-full flex-col'
-                    >
-                        test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
-                        <span style={{ color: "rgb(222, 147, 95)" }}>print</span>(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;\nТестовая точность:&#x27;</span>, test_acc)
-                    </div>
+                        <div
+                            className=''
+                        >
+                            test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+                            <span style={{ color: "rgb(222, 147, 95)" }}>print</span>(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;\nТестовая точность:&#x27;</span>, test_acc)
+                        </div>
 
-                )
-            },
-            "savingModel":
-            {
-                "code": `model.save('mnist_model.h5')`,
-                "codeHighlighted": (
+                    )
+                },
 
-                    <div
-                        className=' border rounded  px-3 py-1 w-full flex-col'
-                    >
-                        model.save(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;mnist_model.h5&#x27;</span>)
-                    </div>
+                {
+                    "description": 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.',
+                    "code": `model.save('mnist_model.h5')`,
+                    "name": 'main.py',
+                    "codeHighlighted": (
 
-                )
-            }
+                        <div
+                            className=''
+                        >
+                            model.save(<span style={{ color: "rgb(181, 189, 104)" }}>&#x27;mnist_model.h5&#x27;</span>)
+                        </div>
+
+                    )
+                }
+            ]
         }
 
     }

@@ -39,7 +39,10 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
-h2{
-  @apply text-3xl font-bold tracking-wider
+h2 {
+  @apply text-2xl sm:text-3xl font-bold tracking-wider;
 }
 
+.underlined {
+  @apply hover:border-green-300 border-black border-b border-dashed transition;
+}

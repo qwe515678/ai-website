@@ -5,8 +5,9 @@ import WhatIsAI from "@/components/sections/what-is-ai";
 import WhereIsUsed from "@/components/sections/where-is-used";
 import { cn } from "@/lib/cn";
 import { ReactNode } from "react";
-
+import { useTranslations } from 'next-intl'
 export default function Home() {
+  const t = useTranslations()
   return (
     <div className=" flex flex-col gap-5">
       <section className="max-h-full overflow-hidden"><Hero /></section>
@@ -14,7 +15,7 @@ export default function Home() {
       <Section className="h-fit">
         <WhatIsAI />
       </Section>
-      <Section>
+      <Section className="overflow-hidden border-b border-dashed pb-2">
         <AiHistory />
       </Section>
       <Section>
@@ -23,13 +24,14 @@ export default function Home() {
       <Section>
         <GettingStarted />
       </Section>
+      <div className=""></div>
     </div>
   );
 }
 
 function Section({ children, ...props }: { children?: ReactNode, } & React.HTMLAttributes<HTMLElement>) {
   return (
-    <section className={cn("min-h-dvh border-b border-dashed py-4 overflow-hidden", props.className)} {...props}>
+    <section className={cn("min-h-dvh border-b border-dashed py-4 ", props.className)} {...props}>
       {children}
     </section>
   );
