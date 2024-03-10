@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
-const montserrat = Unbounded({ subsets: ["latin", 'cyrillic', 'cyrillic-ext'] });
+const montserrat = Unbounded({
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,12 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className + ' bg-black dark relative'}>
+      <body className={montserrat.className + " dark relative bg-black"}>
         <div className="">
           <Header />
-          <div className="w-full max-w-6xl px-2 mx-auto">
-            {children}
-          </div>
+          <div className="mx-auto w-full max-w-6xl px-2">{children}</div>
         </div>
       </body>
     </html>
