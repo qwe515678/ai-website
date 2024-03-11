@@ -28,8 +28,8 @@ export default function GettingStarted() {
                   <rect width="170" height="50" className="fill-green-300" />
                 </svg>
 
-                <a href={skill.link} className="underlined">
-                  {skill.text}
+                <a href={skill.link} className="group">
+                  {skill.text.split("").map((mini_char)=><span key={mini_char} className="group-hover:border-green-300 border-black border-b border-dashed transition">{mini_char}</span>)}
                 </a>
               </li>
             );

@@ -8,6 +8,7 @@ import { cn } from "@/lib/cn";
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import HowDoesItWork from "@/components/sections/how-works/how-works";
+import GlitchImage from "@/components/ui/GlitchImage";
 export default function Home() {
   const t = useTranslations();
   return (
@@ -31,7 +32,6 @@ export default function Home() {
       <Section>
         <HowDoesItWork />
       </Section>
-      <div className=""></div>
     </div>
   );
 }

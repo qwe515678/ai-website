@@ -8,10 +8,6 @@ export default function Hero({}) {
   const container: any = useRef(null!);
   const { scrollY } = useScroll(container);
   const y = useTransform(scrollY, [0, 200], [0, 50]);
-  const ySpring = useSpring(y, {
-    stiffness: 1000,
-    damping: 100,
-  });
   return (
     <div
       ref={container}
@@ -23,7 +19,7 @@ export default function Hero({}) {
         <MatrixRain />
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           <motion.h1
-            style={{ y: ySpring }}
+            style={{ y: y }}
             className="text-center text-4xl font-bold text-white  sm:text-6xl  md:text-6xl xl:text-8xl "
           >
             <p className="bg-gradient-to-t from-stone-300 to-stone-50 bg-clip-text">

@@ -20,7 +20,7 @@ export default function Quickstart({}: Iquickstart) {
         </span>
       </div>
 
-      <div className=" w-full transition">
+      <div className=" w-full transition border-l-2 pl-4 lg:pl-0 lg:border-none">
         {data["getting-started"].snippets.codeInfo.map(
           (
             obj: {
@@ -32,7 +32,7 @@ export default function Quickstart({}: Iquickstart) {
             i,
           ) => {
             return (
-              <div key={i} className="min-h-[80vh] ">
+              <div key={i} className="lg:min-h-[80vh] ">
                 <Code
                   icon={data["getting-started"].snippets.langIcon}
                   obj={obj}

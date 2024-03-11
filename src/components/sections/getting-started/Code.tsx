@@ -3,8 +3,6 @@
 import useClipboard from "react-use-clipboard";
 import {
   type ReactNode,
-  useEffect,
-  useRef,
   Dispatch,
   SetStateAction,
 } from "react";
@@ -13,6 +11,7 @@ import { LuCopy } from "react-icons/lu";
 import { MdOutlineDone } from "react-icons/md";
 import data from "@/lib/data";
 import { FaSquareFull } from "react-icons/fa6";
+import Link from "next/link";
 type CodeProps = {
   children: ReactNode;
   icon: ReactNode;
@@ -27,23 +26,25 @@ export default function Code({
   obj,
   i,
   setCurrentNumber,
-  currentNumber, 
+  currentNumber,
 }: CodeProps) {
   const [isCoppied, setCopied] = useClipboard(obj.code, {
     successDuration: 1000,
   });
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.7 });
-  useEffect(() => {
-    setCurrentNumber(i);
-  }, [isInView, i]);
+
   return (
-    <motion.div ref={ref} className="relative lg:min-h-screen ">
-      <div className="flex items-center gap-2 py-5 xl:hidden ">
+    <motion.div onViewportEnter={() => setCurrentNumber(i)} className="relative lg:min-h-screen ">
+      <div className="flex items-center gap-2 py-5  ">
         <FaSquareFull
-          className={`w-2 ${currentNumber === i ? "rounded-full text-green-600" : "text-red-600"} transition`}
+          className={`w-2 ${currentNumber === i ? "rounded-full text-green-600" : "text-red-600"} hidden transition lg:block`}
         />
-        <span className="text-start text-2xl">Этап: 00{i + 1}</span>
+        <Link
+          href={`#${i+1}`}
+          id={String(i + 1)}
+          className="-translate-x-2 text-start text-2xl lg:translate-x-0"
+        >
+          Этап: 00{i + 1}
+        </Link>
       </div>
       <div className="">{obj.description}</div>
       <div className="group relative  my-10 flex-col  rounded border px-3 py-1 font-mono">
@@ -93,7 +94,7 @@ export default function Code({
           </span>
         </div>
         <div className={` group relative my-2 `}>
-          <div className="flex-col overflow-x-scroll md:px-3 md:py-1">
+          <div className="max-w-xl flex-col overflow-x-scroll text-nowrap md:px-3 md:py-1">
             {children}
           </div>
         </div>

@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/lib/cn";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import {
@@ -13,7 +12,13 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { Button } from "../ui/Button";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
 
+const GlitchImage = dynamic(() => import("../ui/GlitchImage"), {
+  ssr: false,
+});
 export default function BentoGridDemo() {
   return (
     <div className="flex flex-col gap-4">
@@ -26,10 +31,11 @@ export default function BentoGridDemo() {
             description={item.description}
             header={item.header}
             icon={item.icon}
-            className={i === 3 || i === 6 ? "md:col-span-2" : "" + " "}
+            className={i === 3 || i === 6 ? "md:col-span-2" : "" + " group"}
           />
         ))}
       </BentoGrid>
+      <Button>еще</Button>
     </div>
   );
 }
@@ -42,7 +48,13 @@ function Skeleton({
   alt?: string;
 }) {
   return (
-    <div className="relative flex h-full min-h-[6rem]  w-full flex-1 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-neutral-200 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+    <motion.div
+      initial={{ filter: "blur(5px)", opacity: 0 }}
+      whileInView={{ filter: "blur(0)", opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="relative flex h-full min-h-[6rem] w-full flex-1  items-center justify-center overflow-hidden rounded-xl bg-black "
+    >
       <Image
         className="absolute inset-0 opacity-30"
         src="/noise.svg"
@@ -50,14 +62,8 @@ function Skeleton({
         height={250}
         alt=""
       />
-      <Image
-        src={"/whereIsUsed/" + src}
-        alt={alt}
-        width={200}
-        height={400}
-        {...props}
-      />
-    </div>
+      <div className="transition-all duration-[5s] ease-in-out  hover:scale-110"><GlitchImage src={"whereIsUsed/" + src} /></div>
+    </motion.div>
   );
 }
 const items = [
@@ -79,7 +85,7 @@ const items = [
     title: "Транспорт",
     description:
       "Пронеситесь по дорогам будущего в автономных транспортных средствах, которые доставят вас куда угодно с комфортом и скоростью.",
-    header: <Skeleton src="transport.svg"/>,
+    header: <Skeleton src="transport.svg" />,
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -100,14 +106,14 @@ const items = [
     title: "Искусство",
     description:
       "Прикоснитесь к шедеврам, созданным ИИ, которые стирают грань между машиной и творцом.",
-    header: <Skeleton src="art.svg"/>,
+    header: <Skeleton src="art.svg" />,
     icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Биотехнологии",
     description:
       "Расшифруйте код жизни и откройте новые способы лечения, которые победят болезни прошлого.",
-    header: <Skeleton src="bio.svg"/>,
+    header: <Skeleton src="bio.svg" />,
     icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
   },
 ];
