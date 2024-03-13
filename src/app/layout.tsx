@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
+import ContextProvider from "../components/ui/providers";
+import dynamic from "next/dynamic";
+const Mouse = dynamic(() => import("@/components/ui/Mouse"), { ssr: false });
 const montserrat = Unbounded({
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
 });
@@ -18,11 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className + " dark relative bg-black"}>
-        <div className="">
+      <body
+        className={montserrat.className + " dark relative bg-black text-white group/body"}
+        style={{ background: "black" }}
+      >
+        <ContextProvider>
           <Header />
-          <div className="mx-auto w-full max-w-6xl px-2">{children}</div>
-        </div>
+          <Mouse />
+          <div className="mx-auto w-full max-w-6xl px-2">
+            {children}
+            </div>
+        </ContextProvider>
       </body>
     </html>
   );

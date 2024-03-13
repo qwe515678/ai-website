@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { TracingBeam } from "../ui/tracing-beam";
+import { Button } from "../ui/Button";
 export default function AiHistory() {
   const [isPrelonged, setIsPrelonged] = useState(false);
   return (
@@ -50,12 +51,12 @@ export default function AiHistory() {
         </TracingBeam>
         <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-black/0 h-4 ${isPrelonged&&'hidden'}`}></div>
       </motion.div>
-      <button
+      <Button
         className={`mx-auto w-fit rounded-xl border px-4 py-1 ${isPrelonged && "hidden"}`}
         onClick={() => setIsPrelonged(!isPrelonged)}
       >
         дальше
-      </button>
+      </Button>
     </div>
   );
 }

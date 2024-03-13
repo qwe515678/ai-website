@@ -62,7 +62,9 @@ function Skeleton({
         height={250}
         alt=""
       />
-      <div className="transition-all duration-[5s] ease-in-out  hover:scale-110"><GlitchImage src={"whereIsUsed/" + src} /></div>
+      <div className="">
+        <GlitchImage src={"whereIsUsed/" + src} />
+      </div>
     </motion.div>
   );
 }

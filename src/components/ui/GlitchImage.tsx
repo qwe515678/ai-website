@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ANIMATION_CONFIG = {
   updateFrequency: 0.1,
@@ -70,9 +71,13 @@ function GlitchImage({ src }: { src: string }) {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <GlitchShaderMaterial texture={texture} isHovered={isHovered} />
-      </Canvas>
+      {window.innerWidth < 768 ? (
+        <Image src={src} width={1000} height={500} alt="" />
+      ) : (
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <GlitchShaderMaterial texture={texture} isHovered={isHovered} />
+        </Canvas>
+      )}
     </motion.div>
   );
 }
