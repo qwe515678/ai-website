@@ -9,7 +9,8 @@ import {
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { LuCopy } from "react-icons/lu";
 import { MdOutlineDone } from "react-icons/md";
-import data from "@/lib/data";
+import data, { variants } from "@/lib/data";
+
 import { FaSquareFull } from "react-icons/fa6";
 import Link from "next/link";
 type CodeProps = {
@@ -68,7 +69,7 @@ export default function Code({
               <AnimatePresence mode="popLayout">
                 {isCoppied ? (
                   <motion.div
-                    variants={data.variants.copyVariants}
+                    variants={variants.copyVariants}
                     initial="initial"
                     animate="animate"
                     exit="exit"
@@ -79,7 +80,7 @@ export default function Code({
                   </motion.div>
                 ) : (
                   <motion.div
-                    variants={data.variants.copyVariants}
+                    variants={variants.copyVariants}
                     initial="initial"
                     animate="animate"
                     exit="exit"

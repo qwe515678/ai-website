@@ -20,7 +20,7 @@ export default function Quickstart({}: Iquickstart) {
         </span>
       </div>
 
-      <div className=" w-full transition border-l-2 pl-4 lg:pl-0 lg:border-none">
+      <div className=" w-full border-l-2 pl-4 transition lg:border-none lg:pl-0">
         {data["getting-started"].snippets.codeInfo.map(
           (
             obj: {

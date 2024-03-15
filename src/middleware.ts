@@ -1,11 +1,11 @@
 import createMiddleware from "next-intl/middleware";
 
 export default createMiddleware({
-    locales: ['en', 'ru'],
+    locales: ['ru'],
     defaultLocale: 'ru'
 })
 
 
 export const config = {
-    matcher: ['/', '/(ru|en)/:path*']
+    matcher: ['/', '/(ru)/:path*']
 }

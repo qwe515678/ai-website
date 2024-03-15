@@ -29,7 +29,14 @@ export default function GettingStarted() {
                 </svg>
 
                 <a href={skill.link} className="group">
-                  {skill.text.split("").map((mini_char)=><span key={mini_char} className="group-hover:border-green-300 border-black border-b border-dashed transition">{mini_char}</span>)}
+                  {skill.text.split("").map((minichar, i) => (
+                    <span
+                      key={i}
+                      className="border-b border-dashed border-black transition group-hover:border-green-300"
+                    >
+                      {minichar}
+                    </span>
+                  ))}
                 </a>
               </li>
             );

@@ -40,5 +40,6 @@ body {
   width: 0;
 }
 h2 {
-  @apply text-2xl sm:text-3xl font-bold tracking-wider;
+  @apply text-base sm:text-3xl font-bold tracking-wider;
 }
+

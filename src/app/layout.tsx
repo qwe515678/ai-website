@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header/header";
 import ContextProvider from "../components/ui/providers";
 import dynamic from "next/dynamic";
+import ScrollTest from "@/components/ui/scrollProgress";
 const Mouse = dynamic(() => import("@/components/ui/Mouse"), { ssr: false });
 const montserrat = Unbounded({
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
@@ -20,17 +21,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body
-        className={montserrat.className + " dark relative bg-black text-white group/body"}
+        className={
+          montserrat.className + " group/body dark relative bg-black text-white"
+        }
         style={{ background: "black" }}
       >
         <ContextProvider>
+          <ScrollTest />
           <Header />
           <Mouse />
-          <div className="mx-auto w-full max-w-6xl px-2">
-            {children}
-            </div>
+          <div className="mx-auto w-full max-w-6xl px-2 py-1">{children}</div>
         </ContextProvider>
       </body>
     </html>

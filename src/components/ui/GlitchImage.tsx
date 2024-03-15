@@ -63,7 +63,6 @@ const GlitchShaderMaterial = ({
 
 function GlitchImage({ src }: { src: string }) {
   const texture = new THREE.TextureLoader().load(src);
-  console.log("🚀 ~ GlitchImage ~ texture:", texture);
   const [isHovered, setIsHovered] = useState(false);
 
   return (

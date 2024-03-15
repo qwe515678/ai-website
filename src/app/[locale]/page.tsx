@@ -1,5 +1,5 @@
 import Hero from "@/components/hero/hero";
-import AiHistory from "@/components/sections/ai-history";
+import AiHistory from "@/components/sections/ai-history/ai-history";
 import GettingStarted from "@/components/sections/getting-started/getting-started";
 import WhatIsAI from "@/components/sections/what-is-ai";
 import WhereIsUsed from "@/components/sections/where-is-used";
@@ -8,9 +8,7 @@ import { cn } from "@/lib/cn";
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import HowDoesItWork from "@/components/sections/how-works/how-works";
-import GlitchImage from "@/components/ui/GlitchImage";
 export default function Home() {
-  const t = useTranslations();
   return (
     <div className=" flex flex-col gap-5">
       <section className="max-h-full overflow-hidden">
@@ -31,6 +29,9 @@ export default function Home() {
       </Section>
       <Section>
         <HowDoesItWork />
+      </Section>
+      <Section>
+        
       </Section>
     </div>
   );

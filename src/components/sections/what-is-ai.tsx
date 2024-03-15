@@ -1,14 +1,16 @@
-"use client";
+import { useTranslations } from "next-intl";
+
 
 export default function WhatIsAi() {
+  const t:any = useTranslations()
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="">Что такое ИИ</h2>
+      <h2 className="">{t('Sections.WhatIsAi.h2')}</h2>
       <p>
         <span className="border-b border-dashed border-green-300">
-          Искусственный интеллект (ИИ)
+          {t("Sections.WhatIsAi.definition.name")}
         </span>{" "}
-        – это способность машин думать, учиться и действовать как люди.
+       {t('Sections.WhatIsAi.definition.definition')}
       </p>
     </div>
   );

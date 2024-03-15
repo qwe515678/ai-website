@@ -12,10 +12,9 @@ export default function Mouse() {
   };
 
   //Smooth out the mouse values
-  const smoothOptions = { damping: 4, stiffness: 1, mass: 1 };
   const smoothMouse = {
-    x: useSpring(mouse.x, smoothOptions),
-    y: useSpring(mouse.y, smoothOptions),
+    x: useSpring(mouse.x, { stiffness: 1000, damping: 100 }),
+    y: useSpring(mouse.y, { stiffness: 1000, damping: 100 }),
   };
   function mouseMove(e: any) {
     mouse.x.set(e.clientX - cursorSize / 2);
@@ -29,12 +28,11 @@ export default function Mouse() {
   return (
     <motion.div
       style={{
-        left: mouse.x,
-        top: mouse.y,
-        scale: mouseState?.mouseState === "normal" ? 1 : 3,
+        left: smoothMouse.x,
+        top: smoothMouse.y,
+        scale: mouseState?.mouseState === "normal" ? 1 : 4,
       }}
-      transition={{ type: "spring", duration: 0.3 }}
-      className={`pointer-events-none fixed z-[80] h-5 w-5 scale-0 rounded-full bg-white opacity-0 transition group-hover/body:scale-100 group-hover/body:opacity-100 ${window.innerWidth < 768 && "hidden"}`}
-    ></motion.div>
+      className={`pointer-events-none fixed z-[80] hidden h-6 w-6 scale-0 rounded-full opacity-0 backdrop-invert transition-transform group-hover/body:scale-100 group-hover/body:opacity-100 md:block`}
+    />
   );
 }

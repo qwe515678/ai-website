@@ -15,6 +15,7 @@ import Image from "next/image";
 import { Button } from "../ui/Button";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { HtmlProps } from "next/dist/shared/lib/html-context.shared-runtime";
 
 const GlitchImage = dynamic(() => import("../ui/GlitchImage"), {
   ssr: false,
@@ -54,6 +55,7 @@ function Skeleton({
       transition={{ duration: 1 }}
       viewport={{ once: true }}
       className="relative flex h-full min-h-[6rem] w-full flex-1  items-center justify-center overflow-hidden rounded-xl bg-black "
+      {...props}
     >
       <Image
         className="absolute inset-0 opacity-30"

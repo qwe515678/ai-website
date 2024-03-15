@@ -1,9 +1,123 @@
 {
   "Ui": {},
   "Sections": {
+    "Hero": "Не можешь победить ИИ - возглавь",
     "GettingStarted": {},
-    "AiHistory": {},
-    "WhatIsAi": {},
+    "AiHistory": {
+      "h2": "История ИИ",
+      "1943": {
+        "year": "1943",
+        "event": "Уоррен Маккалок и Уолтер Питтс создают модель нейрона, заложив основы нейронных сетей.",
+        "wiki_link": "https://www.computerhistory.org/timeline/1943/"
+      },
+      "1949": {
+        "year": "1949",
+        "event": "Алан Тьюринг формулирует тест Тьюринга для оценки способности машин мыслить.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Turing_test"
+      },
+      "1956": {
+        "year": "1956",
+        "event": "На Дартмутской конференции впервые используется термин `искусственный интеллект`.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence"
+      },
+      "1957": {
+        "year": "1957",
+        "event": "Аллен Ньюэлл и Герберт Саймон создают General Problem Solver (GPS), первую программу для решения задач из разных областей.",
+        "wiki_link": "https://en.wikipedia.org/wiki/General_Problem_Solver"
+      },
+      "1965": {
+        "year": "1965",
+        "event": "Джон Маккарти создает язык программирования Lisp, используемый в исследованиях ИИ.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Lisp_(programming_language)"
+      },
+      "1966": {
+        "year": "1966",
+        "event": "Джозеф Вейценбаум создает ELIZA, программу, имитирующую психотерапевта.",
+        "wiki_link": "https://en.wikipedia.org/wiki/ELIZA"
+      },
+      "1972": {
+        "year": "1972",
+        "event": "Разработана программа STUDENT для решения задач алгебры на уровне студента.",
+        "wiki_link": "https://en.wikipedia.org/wiki/STUDENT_(program)"
+      },
+      "1974": {
+        "year": "1974",
+        "event": "Создана программа MYCIN для ставок диагнозов и назначения лечения.",
+        "wiki_link": "https://en.wikipedia.org/wiki/MYCIN"
+      },
+      "1980": {
+        "year": "1980",
+        "event": "Deep Thought обыграла чемпиона мира по шахматам.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Deep_Thought_(computer)"
+      },
+      "1985": {
+        "year": "1985",
+        "event": "Создана программа Eureka для решения задач, используя здравый смысл.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Eureka_(computer)"
+      },
+      "1997": {
+        "year": "1997",
+        "event": "Deep Blue обыграла чемпиона мира по шахматам Гарри Каспарова.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Deep_Blue"
+      },
+      "1998": {
+        "year": "1998",
+        "event": "Watson могла отвечать на вопросы по медицине на уровне врача.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Watson_(computer)"
+      },
+      "2005": {
+        "year": "2005",
+        "event": "DARPA Grand Challenge: беспилотный автомобиль Stanley выиграл приз в $1 млн.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Stanley_(robot)"
+      },
+      "2011": {
+        "year": "2011",
+        "event": "IBM Watson победила в телевикторине Jeopardy!, обыграв двух чемпионов.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Jeopardy!_episode_4000"
+      },
+      "2012": {
+        "year": "2012",
+        "event": "Google X запустил проект самоуправляемого автомобиля.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Google_Self-Driving_Car"
+      },
+      "2016": {
+        "year": "2016",
+        "event": "AlphaGo обыграла чемпиона мира по игре в го Ли Седоля.",
+        "wiki_link": "https://en.wikipedia.org/wiki/AlphaGo"
+      },
+      "2020": {
+        "year": "2020",
+        "event": "GPT-3 генерирует текст, невозможно отличить от текста, написанного человеком.",
+        "wiki_link": "https://en.wikipedia.org/wiki/GPT-3"
+      },
+      "2021": {
+        "year": "2021",
+        "event": "Прогнозирование погоды с помощью ИИ становится все более точным и полезным для предупреждения о стихийных бедствиях.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Weather_forecasting"
+      },
+      "2022": {
+        "year": "2022",
+        "event": "Искусственный интеллект начинает играть ключевую роль в экономии расходов стартапов.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Startup_costs"
+      },
+      "2023": {
+        "year": "2023",
+        "event": "Рост интереса к искусственному интеллекту в профессиональном и образовательном контексте.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence_in_business"
+      },
+      "2024": {
+        "year": "2024",
+        "event": "Ожидается, что искусственный интеллект будет играть еще более значительную роль в бизнесе и образовании.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence_in_business"
+      }
+    },
+    "WhatIsAi": {
+      "h2": "Что такое ИИ",
+      "definition": {
+        "name": "Искусственный интеллект (ИИ)",
+        "definition": " - это способность машин думать, учиться и действовать как люди."
+      }
+    },
     "WhereIsUsed": {}
   }
 }
