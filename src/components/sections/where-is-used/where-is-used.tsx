@@ -1,6 +1,5 @@
-"use client";
 import React from "react";
-import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
+import { BentoGrid, BentoGridItem } from "../../ui/bento-grid";
 import {
   IconArrowWaveRightUp,
   IconBoxAlignRightFilled,
@@ -12,18 +11,14 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import Image from "next/image";
-import { Button } from "../ui/Button";
-import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import { HtmlProps } from "next/dist/shared/lib/html-context.shared-runtime";
+import { Button } from "../../ui/Button";
+import GlitchImage from "./GlitchImage";
+import H2 from "@/components/ui/H2";
 
-const GlitchImage = dynamic(() => import("../ui/GlitchImage"), {
-  ssr: false,
-});
 export default function BentoGridDemo() {
   return (
     <div className="flex flex-col gap-4">
-      <h2>Где используется ИИ</h2>
+      <H2 href="#where-is-used">Где используется ИИ</H2>
       <BentoGrid className="mx-auto max-w-4xl">
         {items.map((item, i) => (
           <BentoGridItem
@@ -49,11 +44,7 @@ function Skeleton({
   alt?: string;
 }) {
   return (
-    <motion.div
-      initial={{ filter: "blur(5px)", opacity: 0 }}
-      whileInView={{ filter: "blur(0)", opacity: 1 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
+    <div
       className="relative flex h-full min-h-[6rem] w-full flex-1  items-center justify-center overflow-hidden rounded-xl bg-black "
       {...props}
     >
@@ -64,10 +55,17 @@ function Skeleton({
         height={250}
         alt=""
       />
-      <div className="">
+      <div className="hidden md:block">
         <GlitchImage src={"whereIsUsed/" + src} />
       </div>
-    </motion.div>
+      <Image
+        src={"whereIsUsed/" + src}
+        width={500}
+        height={250}
+        alt=""
+        className="max-h-[10dvh] md:hidden"
+      />
+    </div>
   );
 }
 const items = [

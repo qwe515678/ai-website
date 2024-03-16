@@ -1,11 +1,12 @@
 import { useTranslations } from "next-intl";
+import H2 from "../ui/H2";
 
 
 export default function WhatIsAi() {
   const t:any = useTranslations()
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="">{t('Sections.WhatIsAi.h2')}</h2>
+      <H2 href="#what-is-ai">{t('Sections.WhatIsAi.h2')}</H2>
       <p>
         <span className="border-b border-dashed border-green-300">
           {t("Sections.WhatIsAi.definition.name")}

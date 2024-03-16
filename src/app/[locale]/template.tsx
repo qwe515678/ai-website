@@ -1,15 +1,22 @@
-'use client'
+"use client";
 
-import { ReactNode, useEffect } from "react"
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
-import { AnimatePresence, motion } from "framer-motion"
-import Lenis from '@studio-freight/lenis'
+import { ReactNode, useContext } from "react";
+import { motion } from "framer-motion";
+import { BgBlurContext } from "@/components/ui/providers";
 
 export default function Page({ children }: { children: ReactNode }) {
-    return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.1 }}>
-
-            {children}
-        </motion.div>
-    )
+  const bgBlurContext = useContext(BgBlurContext);
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: bgBlurContext?.bgBlur ? 0.5 : 1,
+        filter: bgBlurContext?.bgBlur ? "blur(5px)" : "blur(0px)",
+      }}
+      transition={{ duration: 1, delay: 0.1 }}
+      className=""
+    >
+      {children}
+    </motion.div>
+  );
 }

@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import List from "./List";
 import ListItem from "./ListItem";
+import H2 from "@/components/ui/H2";
 const keys = [
   "1943",
   "1949",
@@ -28,7 +29,7 @@ export default function AiHistory() {
   const t: any = useTranslations();
   return (
     <div className="flex flex-col gap-4">
-      <h2>{t("Sections.AiHistory.h2")}</h2>
+      <H2 href="#ai-history">{t("Sections.AiHistory.h2")}</H2>
       <List>
         {keys.map((key, i) => (
           <ListItem

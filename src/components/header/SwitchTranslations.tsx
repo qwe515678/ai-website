@@ -10,12 +10,12 @@ export default function SwitchTranslations() {
   const [testLocale, setTestLocale] = useState("en");
   const router = useRouter();
   const path = usePathname();
-  const locales = ["en", "ru", "de"]; // Список доступных локалей
+  const locales = ["ru"]; // Список доступных локалей
   const pathSegments = path.split("/");
   const changeLocale = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     router.push(
-      getNextOrFirst(locales, pathSegments[1] || "en") +
+      getNextOrFirst(locales, pathSegments[1] || "ru") +
         "/" +
         path.split("/").slice(2).join("/"),
       { scroll: false },
@@ -27,7 +27,7 @@ export default function SwitchTranslations() {
       <Button
         className="relative flex min-w-10 flex-col bg-black"
         onClick={(e) => {
-          setTestLocale(getNextOrFirst(locales, testLocale || "en"));
+          setTestLocale(getNextOrFirst(locales, testLocale || "ru"));
           changeLocale(e);
         }}
       >

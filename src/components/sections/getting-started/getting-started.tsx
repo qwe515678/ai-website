@@ -2,11 +2,12 @@ import data from "@/lib/data";
 import Code from "./Code";
 import Link from "next/link";
 import Quickstart from "./quickstart";
+import H2 from "@/components/ui/H2";
 
 export default function GettingStarted() {
   return (
     <div className="flex flex-col gap-4">
-      <h2>Quickstart</h2>
+      <H2 href="#quickstart">Quickstart</H2>
       <p>
         В этом гайде мы шаг за шагом создадим простую нейронную сеть для
         классификации изображений с помощью Python и TensorFlow.

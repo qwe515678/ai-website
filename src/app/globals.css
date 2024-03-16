@@ -24,6 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -39,7 +40,3 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
-h2 {
-  @apply text-base sm:text-3xl font-bold tracking-wider;
-}
-

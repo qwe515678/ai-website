@@ -24,7 +24,8 @@ export default function RootLayout({
     <html lang="ru">
       <body
         className={
-          montserrat.className + " group/body dark relative bg-black text-white"
+          montserrat.className +
+          " group/body dark relative bg-black text-white "
         }
         style={{ background: "black" }}
       >
@@ -32,7 +33,7 @@ export default function RootLayout({
           <ScrollTest />
           <Header />
           <Mouse />
-          <div className="mx-auto w-full max-w-6xl px-2 py-1">{children}</div>
+          <div className="mx-auto w-full max-w-6xl px-2 py-1 ">{children}</div>
         </ContextProvider>
       </body>
     </html>

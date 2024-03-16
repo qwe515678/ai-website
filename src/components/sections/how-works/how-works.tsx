@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/Button";
+import H2 from "@/components/ui/H2";
 import data from "@/lib/data";
 import {
   AnimatePresence,
@@ -48,10 +49,9 @@ export default function HowDoesItWork() {
       id="how-does-it-work"
       style={{ height: "400dvh" }}
     >
-      <h2>Как работает ИИ</h2>
+      <H2 href="#how-works">Как работает ИИ</H2>
       <div className="sticky top-[25dvh] ">
-        <div className="relative flex  flex-col-reverse items-center justify-center gap-32 pb-4 lg:flex-row">
-          
+        <div className="relative flex flex-col-reverse items-center justify-center gap-32 pb-4 lg:flex-row">
           <ul className="lg:min-w-1/2 relative flex w-full max-w-xl items-center justify-center">
             <AnimatePresence>
               {data["how-it-works"].layers.map((layer, i) => {
@@ -62,9 +62,9 @@ export default function HowDoesItWork() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       key={layer.name}
-                      className={`flex-0 gap-5  absolute my-auto flex-col flex w-full items-start justify-center rounded-xl transition-colors md:text-justify lg:p-5`}
+                      className={`flex-0 absolute my-auto flex w-full flex-col items-start justify-center gap-3 rounded-xl ${i !== currentCard && "hidden"} transition-colors md:text-justify lg:p-5`}
                     >
-                      <p className="text-xl text-green-300">{layer.name}</p>
+                      <p className="text-xl text-pink-500 font-bold">{layer.name}</p>
                       <p>{layer.description}</p>
                     </motion.li>
                   );
@@ -72,7 +72,7 @@ export default function HowDoesItWork() {
               })}
             </AnimatePresence>
           </ul>
-          <div className="relative">
+          <div className="relative hidden xs:block">
             <motion.div
               animate={{
                 maskImage: 'url("/howDoesItWork/mask.svg")',
@@ -94,6 +94,28 @@ export default function HowDoesItWork() {
               className="absolute left-0 top-0 max-h-[40dvh] w-fit opacity-10 duration-300 "
               width={1000}
               height={500}
+            />
+          </div>
+          <div className="relative xs:hidden">
+            <Image
+              src="/howDoesItWork/ai-scheme.svg"
+              alt="Neural network visualisation"
+              className="brightness-50"
+              width={1000}
+              height={500}
+            />
+            <motion.div
+              className="absolute -bottom-2 -top-2 w-[15vw]  border-y-2 border-pink-600"
+              animate={{
+                translateX:
+                  currentCard === 0
+                    ? "0vw"
+                    : currentCard === 1
+                      ? "39vw"
+                      : currentCard === 2
+                        ? "80vw"
+                        : "0vw",
+              }}
             />
           </div>
         </div>
