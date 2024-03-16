@@ -9,10 +9,11 @@ import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import HowDoesItWork from "@/components/sections/how-works/how-works";
 export default function Home() {
+  const t: any = useTranslations()
   return (
     <div className=" flex flex-col gap-5">
       <section className="max-h-full overflow-hidden">
-        <Hero />
+        <Hero title={t("Sections.Hero")}/>
       </section>
       <div className="min-h-[100vh]" />
       <Section className="h-fit">
