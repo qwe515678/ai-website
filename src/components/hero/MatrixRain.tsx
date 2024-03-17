@@ -9,6 +9,7 @@ export default function MatrixRain() {
   return (
     <div ref={ref} className="absolute inset-0 opacity-40 ">
       <MatrixRainingLetters
+        key={"foo_bar"}
         custom_class={`m-0 p-0 z-1 ${!isInView && "hidden"}`}
       />
       <div className="absolute inset-0 z-[2] opacity-70" />

@@ -4,8 +4,7 @@ import Link from "next/link";
 import { ReactNode, useState } from "react";
 import { TracingBeam } from "../../ui/tracing-beam";
 import { Button } from "../../ui/Button";
-import { variants } from "@/lib/data";
-
+import { BsArrowUpRight } from "react-icons/bs";
 export default function List({ children }: { children: ReactNode }) {
   const [isPrelonged, setIsPrelonged] = useState(false);
   return (

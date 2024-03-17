@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { MouseStateContext } from "./providers";
 
 export default function Mouse() {
-  const mouseState = useContext(MouseStateContext);
+  const mouseContext = useContext(MouseStateContext);
   const cursorSize = 20;
   const mouse = {
     x: useMotionValue(0),
@@ -30,9 +30,11 @@ export default function Mouse() {
       style={{
         left: mouse.x,
         top: mouse.y,
-        scale: mouseState?.mouseState === "normal" ? 1 : 4,
+        scale: mouseContext?.mouseState === "normal" ? 1 : 2,
       }}
-      className={`pointer-events-none fixed z-[100] hidden h-6 w-6 scale-0 rounded-full opacity-0 backdrop-invert transition-transform group-hover/body:scale-100 group-hover/body:opacity-100 md:block`}
-    />
+      className={`pointer-events-none fixed z-[100]  hidden h-6 w-6 scale-0 items-center justify-center rounded-full text-[.3rem] font-extrabold text-black opacity-0 backdrop-invert transition-transform group-hover/body:scale-100 group-hover/body:opacity-100 md:flex`}
+    >
+      {mouseContext?.mouseTitle}
+    </motion.div>
   );
 }

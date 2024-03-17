@@ -12,10 +12,9 @@ export default function Home() {
   const t: any = useTranslations();
   return (
     <div className=" flex flex-col gap-5">
-      <section className="max-h-full overflow-hidden">
+      <section className="max-h-full ">
         <Hero title={t("Sections.Hero")} />
       </section>
-      <div className="min-h-[100vh]" />
       <Section className="h-fit">
         <WhatIsAI />
       </Section>
@@ -28,7 +27,7 @@ export default function Home() {
       <Section>
         <GettingStarted />
       </Section>
-      <Section>
+      <Section className="">
         <HowDoesItWork />
       </Section>
       <Section></Section>

@@ -14,7 +14,7 @@ export default function H2({
       scroll={false}
       className="group flex items-center justify-start gap-3"
     >
-      <h2 className="text-2xl font-bold tracking-wider sm:text-3xl">
+      <h2 className=" break-all text-xl font-bold tracking-wider xs:text-2xl sm:text-3xl">
         {children}
       </h2>
       <GoHash className="text-xl opacity-60 transition-opacity group-hover:opacity-100" />

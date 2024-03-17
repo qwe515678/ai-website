@@ -36,7 +36,7 @@ export default function Code({
     >
       <div className="flex items-center gap-2 py-5  ">
         <FaSquareFull
-          className={`w-2 ${currentNumber === i ? "rounded-full text-green-600" : "text-red-600"} hidden transition lg:block`}
+          className={`w-2 ${currentNumber === i ? "rounded-full text-green-600" : "text-pink-600"} hidden transition lg:block`}
         />
         <Link
           href={`#${i + 1}`}
@@ -46,11 +46,11 @@ export default function Code({
           Этап: 00{i + 1}
         </Link>
       </div>
-      <div className="">{obj.description}</div>
+      <div className="break-words">{obj.description}</div>
       <div className="group relative  my-10 flex-col  rounded border px-3 py-1 font-mono">
         <div className="absolute -right-16 top-0 hidden items-center justify-center gap-2 xl:flex ">
           <FaSquareFull
-            className={`w-2 ${currentNumber === i ? "rounded-full text-green-600" : "text-red-600"} transition`}
+            className={`w-2 ${currentNumber === i ? "rounded-full text-green-600" : "text-pink-600"} transition`}
           />
           <span>00{i + 1}</span>
         </div>

@@ -51,7 +51,7 @@ export default function HowDoesItWork() {
     >
       <H2 href="#how-works">Как работает ИИ</H2>
       <div className="sticky top-[25dvh] ">
-        <div className="relative flex flex-col-reverse items-center justify-center gap-32 pb-4 lg:flex-row">
+        <div className="relative flex flex-col-reverse items-center justify-center gap-36 pb-20 xs:pb-4 lg:flex-row">
           <ul className="lg:min-w-1/2 relative flex w-full max-w-xl items-center justify-center">
             <AnimatePresence>
               {data["how-it-works"].layers.map((layer, i) => {
@@ -64,7 +64,9 @@ export default function HowDoesItWork() {
                       key={layer.name}
                       className={`flex-0 absolute my-auto flex w-full flex-col items-start justify-center gap-3 rounded-xl ${i !== currentCard && "hidden"} transition-colors md:text-justify lg:p-5`}
                     >
-                      <p className="text-xl text-pink-500 font-bold">{layer.name}</p>
+                      <p className="text-xl font-bold text-pink-500">
+                        {layer.name}
+                      </p>
                       <p>{layer.description}</p>
                     </motion.li>
                   );
@@ -100,9 +102,9 @@ export default function HowDoesItWork() {
             <Image
               src="/howDoesItWork/ai-scheme.svg"
               alt="Neural network visualisation"
-              className="brightness-50"
               width={1000}
               height={500}
+              className="py-1"
             />
             <motion.div
               className="absolute -bottom-2 -top-2 w-[15vw]  border-y-2 border-pink-600"

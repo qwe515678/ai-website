@@ -24,7 +24,7 @@ export default function SwitchTranslations() {
 
   return (
     <div className="overflow-y-hidden1">
-      <Button
+      {/* <Button
         className="relative flex min-w-10 flex-col bg-black"
         onClick={(e) => {
           setTestLocale(getNextOrFirst(locales, testLocale || "ru"));
@@ -48,7 +48,8 @@ export default function SwitchTranslations() {
             );
           })}
         </AnimatePresence>
-      </Button>
+      </Button> */}
+      <Button>ru</Button>
     </div>
   );
 }
