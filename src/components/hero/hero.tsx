@@ -6,7 +6,7 @@ export default async function Hero({ title }: { title: string }) {
   const locale = await getLocale();
   return (
     <div id="hero" className="z-[80] overflow-hidden bg-black">
-      <div className="relative h-[100dvh] w-full">
+      <div className="relative h-[100lvh] w-full">
         <MatrixRain />
         <div className="absolute left-1/2 top-1/2 z-[3] -translate-x-1/2 -translate-y-1/2 transform">
           <div
