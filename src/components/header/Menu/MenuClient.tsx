@@ -41,7 +41,7 @@ export default function MenuClient({ data, map }: MenuClientType) {
   return (
     <>
       <Button
-        className={`bg-black ${isOpen && "pointer-events-none"}`}
+        className={`bg-black ${isOpen && "pointer-events-none"} min-w-40`}
         onClick={() => {
           bgBlurContext?.setBgBlur(!bgBlurContext.bgBlur);
           setIsOpen(true);
@@ -94,17 +94,23 @@ export default function MenuClient({ data, map }: MenuClientType) {
                       onMouseEnter={() => setHoverIndex(index)}
                       onMouseLeave={() => setHoverIndex(-1)}
                     >
-                      <Link
-                        href={item.href}
+                      <button
                         className="font-semibold"
-                        scroll={true}
                         onClick={() => {
                           setIsOpen(false);
                           bgBlurContext?.setBgBlur(false);
+                          console.log(item.href);
+                          const element = document.getElementById(
+                            item.href.slice(1),
+                          );
+                          element?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
                         }}
                       >
                         {item.name}
-                      </Link>
+                      </button>
                     </motion.li>
                   );
                 })}

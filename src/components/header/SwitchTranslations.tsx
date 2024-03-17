@@ -5,9 +5,11 @@ import { Button } from "../ui/Button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { variants } from "@/lib/data";
+import { useLocale } from "next-intl";
 
 export default function SwitchTranslations() {
-  const [testLocale, setTestLocale] = useState("en");
+  const locale =  useLocale()
+  const [testLocale, setTestLocale] = useState(locale);
   const router = useRouter();
   const path = usePathname();
   const locales = ["en", "ru", "de"];
@@ -56,7 +58,7 @@ export default function SwitchTranslations() {
 function getNextOrFirst(array: string[], current: string) {
   const currentIndex = array.indexOf(current);
   if (currentIndex === -1) {
-    return "en";
+    return "ru";
   }
   const nextIndex = (currentIndex + 1) % array.length;
   return array[nextIndex];
