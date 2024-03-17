@@ -28,8 +28,8 @@ export default function Mouse() {
   return (
     <motion.div
       style={{
-        left: smoothMouse.x,
-        top: smoothMouse.y,
+        left: mouse.x,
+        top: mouse.y,
         scale: mouseState?.mouseState === "normal" ? 1 : 4,
       }}
       className={`pointer-events-none fixed z-[100] hidden h-6 w-6 scale-0 rounded-full opacity-0 backdrop-invert transition-transform group-hover/body:scale-100 group-hover/body:opacity-100 md:block`}

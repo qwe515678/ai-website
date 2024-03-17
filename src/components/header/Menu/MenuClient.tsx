@@ -48,25 +48,34 @@ export default function MenuClient({ data }: MenuClientType) {
       <AnimatePresence>
         {isOpen && (
           <>
-            <motion.div className="pointer-events-none absolute bottom-0 left-0 right-0 top-0 z-[100]" />
             <motion.div
-              ref={popupRef} // Step 2
+              ref={popupRef}
               key="menu"
               initial={{ opacity: 0, scaleY: 0 }}
               exit={{ opacity: 0, scaleY: 0 }}
               animate={{ opacity: 1, scaleY: 1 }}
-              className="absolute top-20 z-[200] flex min-h-[20vh] min-w-[40vw] max-w-[80vw] flex-col gap-3 rounded-xl border border-pink-600 bg-black/90 p-5 backdrop-blur-xl"
+              style={{ translateX: '75%', translateY: '150%' }}
+              className=" fixed top-0 left-0 z-[200] flex min-h-[20vh] min-w-[40vw] max-w-[80vw] flex-col gap-3 overflow-hidden rounded-xl border border-pink-600 bg-black/90 p-5 shadow-2xl backdrop-blur-xl"
               transition={{ staggerChildren: 0.1 }}
             >
               {data.map((item: MenuClientItemType, index: number) => {
                 return (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -10, filter: "blur(5px)" }}
+                    animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                     transition={{ delay: index * 0.2 }}
                   >
-                    <Link href={item.href} className="font-bold">
+                    <Link
+                      href={item.href}
+                      className="font-bold"
+                      scroll={true}
+                      onClick={() => {
+                        setIsOpen(false);
+                        bgBlurContext?.setBgBlur(false);
+                        1;
+                      }}
+                    >
                       {item.name}
                     </Link>
                   </motion.div>

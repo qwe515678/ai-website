@@ -1,11 +1,7 @@
 "use client";
 
 import useClipboard from "react-use-clipboard";
-import {
-  type ReactNode,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { type ReactNode, Dispatch, SetStateAction } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { LuCopy } from "react-icons/lu";
 import { MdOutlineDone } from "react-icons/md";
@@ -34,13 +30,16 @@ export default function Code({
   });
 
   return (
-    <motion.div onViewportEnter={() => setCurrentNumber(i)} className="relative lg:min-h-screen ">
+    <motion.div
+      onViewportEnter={() => setCurrentNumber(i)}
+      className="relative lg:min-h-screen "
+    >
       <div className="flex items-center gap-2 py-5  ">
         <FaSquareFull
           className={`w-2 ${currentNumber === i ? "rounded-full text-green-600" : "text-red-600"} hidden transition lg:block`}
         />
         <Link
-          href={`#${i+1}`}
+          href={`#${i + 1}`}
           id={String(i + 1)}
           className="-translate-x-2 text-start text-2xl lg:translate-x-0"
         >
@@ -95,7 +94,7 @@ export default function Code({
           </span>
         </div>
         <div className={` group relative my-2 `}>
-          <div className="max-w-xl flex-col overflow-x-scroll text-nowrap md:px-3 md:py-1">
+          <div className="max-w-xl flex-col overflow-x-scroll code-scroll text-nowrap md:px-3 md:py-1">
             {children}
           </div>
         </div>

@@ -17,6 +17,7 @@
 }
 
 body {
+  cursor: none;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -40,3 +41,10 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
+button, cursor-pointer, a {
+  cursor: none;
+}
+.border-gradient-top-right {
+  border-image: linear-gradient(to right, #48BB78 0%, #3B82F6 100%) 1;
+ }
+ 

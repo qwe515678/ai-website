@@ -180,14 +180,14 @@ const data = {
       codeInfo: [
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Установите TensorFlow, используя pip. Это необходимо для работы с библиотекой TensorFlow в вашем проекте.",
           code: "pip install tensorflow",
           name: "shell",
           codeHighlighted: <div className="">pip install tensorflow</div>,
         },
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Импортируйте набор данных MNIST из TensorFlow и разделите его на обучающие и тестовые наборы данных",
           code: `import tensorflow as tf
 
                 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()`,
@@ -220,7 +220,7 @@ const data = {
 
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Затем нормализуйте значения пикселей, разделив их на 255.0, чтобы преобразовать их в диапазон от 0 до 1.",
           code: `x_train = x_train.astype('float32') / 255.0
                 x_test = x_test.astype('float32') / 255.0`,
           name: "main.py",
@@ -246,7 +246,7 @@ const data = {
 
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Создайте модель с помощью Keras, используя последовательный API. Модель будет состоять из слоя Flatten для преобразования изображений в одномерный массив, двух скрытых слоев Dense с функциями активации ReLU и softmax соответственно, и будет предназначена для классификации изображений рукописных цифр.",
           code: `model = tf.keras.models.Sequential([
                     tf.keras.layers.Flatten(input_shape=(28, 28)),
                     tf.keras.layers.Dense(128, activation='relu'),
@@ -278,7 +278,7 @@ const data = {
 
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Скомпилируйте модель, указав оптимизатор 'adam', функцию потерь 'sparse_categorical_crossentropy' и метрику 'accuracy' для оценки производительности модели.",
           code: `model.compile(optimizer='adam',
                 loss='sparse_categorical_crossentropy',
                 metrics=['accuracy'])`,
@@ -305,7 +305,7 @@ const data = {
 
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Обучите модель на обучающих данных в течение 10 эпох, чтобы модель могла адаптироваться к обучающим данным.",
           code: `model.fit(x_train, y_train, epochs=10)                `,
           name: "main.py",
           codeHighlighted: (
@@ -319,7 +319,7 @@ const data = {
 
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Оцените модель на тестовых данных, чтобы увидеть, насколько хорошо она может предсказывать цифры на новых изображениях.",
           code: `test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
                 print('\nТестовая точность:', test_acc)`,
           name: "main.py",
@@ -337,7 +337,7 @@ const data = {
 
         {
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam adipisci, ipsa qui optio modi blanditiis. Nihil hic laudantium iure aut nam odio, doloremque porro mollitia id, eum adipisci, aliquid repudiandae.",
+            "Сохраните обученную модель в файл 'mnist_model.h5', чтобы вы могли использовать ее позже для предсказаний без необходимости повторного обучения.",
           code: `model.save('mnist_model.h5')`,
           name: "main.py",
           codeHighlighted: (
