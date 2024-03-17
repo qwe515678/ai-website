@@ -26,11 +26,11 @@ const keys = [
   "2024",
 ] as const;
 export default function AiHistory() {
-  const t: any = useTranslations();
+  const t = useTranslations();
   return (
     <div className="flex flex-col gap-4">
       <H2 href="#ai-history">{t("Sections.AiHistory.h2")}</H2>
-      <List>
+      <List prolong={t("Ui.Prolong")}>
         {keys.map((key, i) => (
           <ListItem
             event={t(`Sections.AiHistory.${key}.event`)}

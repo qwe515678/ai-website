@@ -10,7 +10,7 @@ export default function SwitchTranslations() {
   const [testLocale, setTestLocale] = useState("en");
   const router = useRouter();
   const path = usePathname();
-  const locales = ["ru"]; // Список доступных локалей
+  const locales = ["en", "ru", "de"];
   const pathSegments = path.split("/");
   const changeLocale = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -24,7 +24,7 @@ export default function SwitchTranslations() {
 
   return (
     <div className="overflow-y-hidden1">
-      {/* <Button
+      <Button
         className="relative flex min-w-10 flex-col bg-black"
         onClick={(e) => {
           setTestLocale(getNextOrFirst(locales, testLocale || "ru"));
@@ -48,8 +48,7 @@ export default function SwitchTranslations() {
             );
           })}
         </AnimatePresence>
-      </Button> */}
-      <Button>ru</Button>
+      </Button>
     </div>
   );
 }

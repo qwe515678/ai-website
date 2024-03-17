@@ -5,7 +5,7 @@ import { type ReactNode, Dispatch, SetStateAction } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { LuCopy } from "react-icons/lu";
 import { MdOutlineDone } from "react-icons/md";
-import data, { variants } from "@/lib/data";
+import { variants } from "@/lib/data";
 
 import { FaSquareFull } from "react-icons/fa6";
 import Link from "next/link";
@@ -16,6 +16,7 @@ type CodeProps = {
   i: number;
   currentNumber: number;
   setCurrentNumber: Dispatch<SetStateAction<number>>;
+  stage: string
 };
 export default function Code({
   children,
@@ -24,6 +25,7 @@ export default function Code({
   i,
   setCurrentNumber,
   currentNumber,
+  stage,
 }: CodeProps) {
   const [isCoppied, setCopied] = useClipboard(obj.code, {
     successDuration: 1000,
@@ -43,7 +45,7 @@ export default function Code({
           id={String(i + 1)}
           className="-translate-x-2 text-start text-2xl lg:translate-x-0"
         >
-          Этап: 00{i + 1}
+          {stage}: 00{i + 1}
         </Link>
       </div>
       <div className="break-words">{obj.description}</div>

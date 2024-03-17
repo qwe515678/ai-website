@@ -5,7 +5,7 @@ import { ReactNode, useState } from "react";
 import { TracingBeam } from "../../ui/tracing-beam";
 import { Button } from "../../ui/Button";
 import { BsArrowUpRight } from "react-icons/bs";
-export default function List({ children }: { children: ReactNode }) {
+export default function List({ children, prolong }: { children: ReactNode, prolong: string }) {
   const [isPrelonged, setIsPrelonged] = useState(false);
   return (
     <>
@@ -30,7 +30,7 @@ export default function List({ children }: { children: ReactNode }) {
         className={`mx-auto w-fit rounded-xl border px-4 py-1 ${isPrelonged && "hidden"}`}
         onClick={() => setIsPrelonged(!isPrelonged)}
       >
-        дальше
+        {prolong}
       </Button>
     </>
   );

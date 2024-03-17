@@ -3,6 +3,7 @@
 import { ReactNode, useContext } from "react";
 import { motion } from "framer-motion";
 import { BgBlurContext } from "@/components/ui/providers";
+import { useLocale } from "next-intl";
 
 export default function Page({ children }: { children: ReactNode }) {
   const bgBlurContext = useContext(BgBlurContext);

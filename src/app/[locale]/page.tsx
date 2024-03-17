@@ -7,9 +7,9 @@ import WhereIsUsed from "@/components/sections/where-is-used/where-is-used";
 import { cn } from "@/lib/cn";
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
-import HowDoesItWork from "@/components/sections/how-works/how-works";
+import HowDoesItWork from "@/components/sections/how-works/HowWorksServer";
 export default function Home() {
-  const t: any = useTranslations();
+  const t = useTranslations();
   return (
     <div className=" flex flex-col gap-5">
       <section className="max-h-full ">
@@ -30,7 +30,6 @@ export default function Home() {
       <Section className="">
         <HowDoesItWork />
       </Section>
-      <Section></Section>
     </div>
   );
 }

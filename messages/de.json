@@ -1,0 +1,203 @@
+{
+  "Ui": {
+    "Prolong": "Mehr",
+    "Menu": {
+      "1": "Was ist KI?",
+      "2": "Geschichte der KI",
+      "3": "Wo wird es verwendet?",
+      "4": "Schnellstart",
+      "5": "Wie es funktioniert",
+      "Map": "karte"
+    }
+  },
+  "Sections": {
+    "Hero": "Wenn Sie die KI nicht besiegen können, übernehmen Sie die Führung",
+    "GettingStarted": {
+      "description": "In dieser Anleitung erstellen wir Schritt für Schritt ein einfaches neuronales Netzwerk für die Bildklassifizierung mit Python und TensorFlow.",
+      "required-skills-title": "Was wirst du brauchen:",
+      "required-skills": {
+        "0": "Python 3.6",
+        "1": "Jupyter Notebook (oder eine andere IDE)",
+        "2": "Grundkenntnisse in Python"
+      },
+      "stage": "Bühne",
+      "snippets": {
+        "1": "Installieren Sie TensorFlow mit pip. ",
+        "2": "Importieren Sie den MNIST-Datensatz aus TensorFlow und teilen Sie ihn in Trainings- und Testdatensätze auf.",
+        "3": "Normalisieren Sie dann die Pixelwerte, indem Sie sie durch 255,0 dividieren, um sie in einen Bereich von 0 bis 1 umzuwandeln.",
+        "4": "Erstellen Sie ein Modell mit Keras mithilfe der seriellen API. ",
+        "5": "Kompilieren Sie das Modell, indem Sie den Optimierer „adam“, die Verlustfunktion „sparse_categorical_crossentropy“ und die Metrik „accuracy“ angeben, um die Leistung des Modells zu bewerten.",
+        "6": "Trainieren Sie das Modell 10 Epochen lang anhand der Trainingsdaten, damit sich das Modell an die Trainingsdaten anpassen kann.",
+        "7": "Bewerten Sie das Modell anhand von Testdaten, um zu sehen, wie gut es Zahlen auf neuen Bildern vorhersagen kann.",
+        "8": "Speichern Sie das trainierte Modell in der Datei „mnist_model.h5“, damit Sie es später für Vorhersagen verwenden können, ohne es erneut trainieren zu müssen."
+      }
+    },
+    "AiHistory": {
+      "1943": {
+        "year": "1943",
+        "event": "Warren McCulloch und Walter Pitts erstellen ein Modell eines Neurons und legen damit den Grundstein für neuronale Netze.",
+        "wiki_link": "https://www.computerhistory.org/timeline/1943/"
+      },
+      "1949": {
+        "year": "1949",
+        "event": "Alan Turing formuliert den Turing-Test, um die Denkfähigkeit von Maschinen zu bewerten.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Turing_test"
+      },
+      "1956": {
+        "year": "1956",
+        "event": "Auf der Dartmouth-Konferenz wird erstmals der Begriff „künstliche Intelligenz“ verwendet.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence"
+      },
+      "1957": {
+        "year": "1957",
+        "event": "Allen Newell und Herbert Simon entwickeln General Problem Solver (GPS), das erste Programm zur Lösung von Problemen aus verschiedenen Bereichen.",
+        "wiki_link": "https://en.wikipedia.org/wiki/General_Problem_Solver"
+      },
+      "1965": {
+        "year": "1965",
+        "event": "John McCarthy entwickelt die Programmiersprache Lisp, die in der KI-Forschung verwendet wird.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Lisp_(Programmiersprache)"
+      },
+      "1966": {
+        "year": "1966",
+        "event": "Joseph Weizenbaum erstellt ELIZA, ein Programm, das einen Psychotherapeuten simuliert.",
+        "wiki_link": "https://en.wikipedia.org/wiki/ELIZA"
+      },
+      "1972": {
+        "year": "1972",
+        "event": "Das STUDENT-Programm wurde entwickelt, um algebraische Probleme auf Studentenebene zu lösen.",
+        "wiki_link": "https://en.wikipedia.org/wiki/STUDENT_(Programm)"
+      },
+      "1974": {
+        "year": "1974",
+        "event": "Das MYCIN-Programm wurde zur Diagnosestellung und Verschreibung von Behandlungen entwickelt.",
+        "wiki_link": "https://en.wikipedia.org/wiki/MYCIN"
+      },
+      "1980": {
+        "year": "1980",
+        "event": "Deep Thought besiegte den Schachweltmeister.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Deep_Thought_(Computer)"
+      },
+      "1985": {
+        "year": "1985",
+        "event": "Eureka wurde entwickelt, um Probleme mit gesundem Menschenverstand zu lösen.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Eureka_(Computer)"
+      },
+      "1997": {
+        "year": "1997",
+        "event": "Deep Blue besiegte den Schachweltmeister Garry Kasparov.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Deep_Blue"
+      },
+      "1998": {
+        "year": "1998",
+        "event": "Watson könnte medizinische Fragen auf Arztebene beantworten.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Watson_(Computer)"
+      },
+      "2005": {
+        "year": "2005",
+        "event": "DARPA Grand Challenge: Selbstfahrendes Auto von Stanley gewinnt Preisgeld in Höhe von 1 Million US-Dollar.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Stanley_(Roboter)"
+      },
+      "2011": {
+        "year": "2011",
+        "event": "IBM Watson gewann die TV-Spielshow Jeopardy! und schlug zwei Champions.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Jeopardy!_episode_4000"
+      },
+      "2012": {
+        "year": "2012",
+        "event": "Google X hat ein selbstfahrendes Autoprojekt gestartet.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Google_Self-Driving_Car"
+      },
+      "2016": {
+        "year": "2016",
+        "event": "AlphaGo besiegte den Go-Weltmeister Lee Sedol.",
+        "wiki_link": "https://en.wikipedia.org/wiki/AlphaGo"
+      },
+      "2020": {
+        "year": "2020",
+        "event": "GPT-3 generiert Text, der nicht von von Menschen geschriebenem Text zu unterscheiden ist.",
+        "wiki_link": "https://en.wikipedia.org/wiki/GPT-3"
+      },
+      "2021": {
+        "year": "2021",
+        "event": "KI-Wettervorhersagen werden immer genauer und nützlicher für die Katastrophenwarnung.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Weather_forecasting"
+      },
+      "2022": {
+        "year": "2022",
+        "event": "Künstliche Intelligenz spielt zunehmend eine Schlüsselrolle dabei, Startups dabei zu helfen, Kosten zu sparen.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Startup_costs"
+      },
+      "2023": {
+        "year": "2023",
+        "event": "Wachsendes Interesse an künstlicher Intelligenz im beruflichen und pädagogischen Kontext.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence_in_business"
+      },
+      "2024": {
+        "year": "2024",
+        "event": "Es wird erwartet, dass künstliche Intelligenz in Wirtschaft und Bildung eine noch wichtigere Rolle spielen wird.",
+        "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence_in_business"
+      },
+      "h2": "Geschichte der KI"
+    },
+    "WhatIsAi": {
+      "h2": "Was ist KI?",
+      "definition": {
+        "name": "Künstliche Intelligenz (KI)",
+        "definition": " ist die Fähigkeit von Maschinen, wie Menschen zu denken, zu lernen und zu handeln."
+      }
+    },
+    "WhereIsUsed": {
+      "h2": "Wo wird KI eingesetzt?",
+      "bento-items": {
+        "health": {
+          "title": "Gesundheitspflege",
+          "description": "Tauchen Sie ein in eine Welt, in der Krankheiten der Vergangenheit angehören und die Lebenserwartung beispiellose Höhen erreicht."
+        },
+        "educaion": {
+          "title": "Ausbildung",
+          "description": "Erleben Sie die unglaubliche Kraft des personalisierten Lernens mit KI."
+        },
+        "transport": {
+          "title": "Transport",
+          "description": "Fahren Sie mit autonomen Fahrzeugen über die Straßen der Zukunft, die Sie bequem und schnell überall hinbringen."
+        },
+        "manufacturing": {
+          "title": "Produktion",
+          "description": "Optimieren Sie Prozesse und minimieren Sie Verschwendung mit KI, die die Zukunft der Fertigung einen Schritt weiter bringt"
+        },
+        "fun": {
+          "title": "Unterhaltung",
+          "description": "Tauchen Sie ein in fesselnde KI-generierte Geschichten, die Sie in Welten entführen, in denen Fantasie zur Realität wird."
+        },
+        "art": {
+          "title": "Kunst",
+          "description": "Erleben Sie von KI geschaffene Meisterwerke, die die Grenze zwischen Maschine und Schöpfer verwischen."
+        },
+        "bio": {
+          "title": "Biotechnologie",
+          "description": "Entschlüsseln Sie den Code des Lebens und entdecken Sie neue Behandlungen, die die Krankheiten der Vergangenheit besiegen."
+        }
+      },
+      "more": "noch"
+    },
+    "HowDoesItWork": {
+      "h2": "Wie KI funktioniert",
+      "layers": {
+        "1": {
+          "title": "Eingabeebene",
+          "description": "Dies ist die erste Ebene, die Eingaben wie Bilder oder Text akzeptiert. "
+        },
+        "2": {
+          "title": "Verborgene Schichten",
+          "description": "Versteckte Schichten analysieren die Eingabedaten und wenden Gewichtungen an, um die Wichtigkeit von Aspekten der Daten zu bestimmen, sodass das Netzwerk lernen und Schlussfolgerungen ziehen kann"
+        },
+        "3": {
+          "title": "Ausgabeebene",
+          "description": "Die Ausgabeschicht erstellt Vorhersagen oder Ausgaben unter Verwendung von Informationen aus verborgenen Schichten, um das Endergebnis zu generieren."
+        }
+      }
+    }
+  },
+  "Sections.GettingStarted.stage": "Bühne"
+}

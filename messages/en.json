@@ -1,0 +1,204 @@
+{
+    "Ui": {
+        "Prolong": "more",
+        "Menu": {
+            "1": "What is AI",
+            "2": "History of AI",
+            "3": "Where is it used?",
+            "4": "Quickstart",
+            "5": "How it works",
+            "Map": "map"
+
+        }
+    },
+    "Sections": {
+        "Hero": "If you can't beat the AI, take the lead",
+        "GettingStarted": {
+            "description": "In this guide, we'll step-by-step create a simple neural network for image classification using Python and TensorFlow.",
+            "required-skills-title": "What you will need:",
+            "required-skills": {
+                "0": "Python 3.6",
+                "1": "Jupyter Notebook (or any other IDE)",
+                "2": "Basic knowledge of Python"
+            },
+            "stage": "Stage",
+            "snippets": {
+                "1": "Install TensorFlow using pip. ",
+                "2": "Import the MNIST dataset from TensorFlow and split it into training and testing datasets.",
+                "3": "Then normalize the pixel values ​​by dividing them by 255.0 to convert them to a range of 0 to 1.",
+                "4": "Create a model with Keras using the Serial API. ",
+                "5": "Compile the model by specifying the 'adam' optimizer, the 'sparse_categorical_crossentropy' loss function, and the 'accuracy' metric to evaluate the model's performance.",
+                "6": "Train the model on the training data for 10 epochs to allow the model to adapt to the training data.",
+                "7": "Evaluate the model on test data to see how well it can predict numbers on new images.",
+                "8": "Save the trained model to the file 'mnist_model.h5' so that you can use it later for predictions without having to retrain."
+            }
+        },
+        "AiHistory": {
+            "1943": {
+                "year": "1943",
+                "event": "Warren McCulloch and Walter Pitts create a model of a neuron, laying the foundations of neural networks.",
+                "wiki_link": "https://www.computerhistory.org/timeline/1943/"
+            },
+            "1949": {
+                "year": "1949",
+                "event": "Alan Turing formulates the Turing test to evaluate the ability of machines to think.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Turing_test"
+            },
+            "1956": {
+                "year": "1956",
+                "event": "The term \"artificial intelligence\" is used for the first time at the Dartmouth conference.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence"
+            },
+            "1957": {
+                "year": "1957",
+                "event": "Allen Newell and Herbert Simon create General Problem Solver (GPS), the first program for solving problems from different domains.",
+                "wiki_link": "https://en.wikipedia.org/wiki/General_Problem_Solver"
+            },
+            "1965": {
+                "year": "1965",
+                "event": "John McCarthy creates the Lisp programming language used in AI research.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Lisp_(programming_language)"
+            },
+            "1966": {
+                "year": "1966",
+                "event": "Joseph Weizenbaum creates ELIZA, a program that simulates a psychotherapist.",
+                "wiki_link": "https://en.wikipedia.org/wiki/ELIZA"
+            },
+            "1972": {
+                "year": "1972",
+                "event": "The STUDENT program has been developed to solve algebra problems at the student level.",
+                "wiki_link": "https://en.wikipedia.org/wiki/STUDENT_(program)"
+            },
+            "1974": {
+                "year": "1974",
+                "event": "The MYCIN program has been created for making diagnoses and prescribing treatment.",
+                "wiki_link": "https://en.wikipedia.org/wiki/MYCIN"
+            },
+            "1980": {
+                "year": "1980",
+                "event": "Deep Thought beat the world chess champion.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Deep_Thought_(computer)"
+            },
+            "1985": {
+                "year": "1985",
+                "event": "Eureka was created to solve problems using common sense.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Eureka_(computer)"
+            },
+            "1997": {
+                "year": "1997",
+                "event": "Deep Blue beat world chess champion Garry Kasparov.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Deep_Blue"
+            },
+            "1998": {
+                "year": "1998",
+                "event": "Watson could answer medical questions at the doctor level.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Watson_(computer)"
+            },
+            "2005": {
+                "year": "2005",
+                "event": "DARPA Grand Challenge: Stanley self-driving car wins $1 million prize.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Stanley_(robot)"
+            },
+            "2011": {
+                "year": "2011",
+                "event": "IBM Watson won the TV game show Jeopardy!, beating two champions.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Jeopardy!_episode_4000"
+            },
+            "2012": {
+                "year": "2012",
+                "event": "Google X launched a self-driving car project.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Google_Self-Driving_Car"
+            },
+            "2016": {
+                "year": "2016",
+                "event": "AlphaGo beat world champion Go player Lee Sedol.",
+                "wiki_link": "https://en.wikipedia.org/wiki/AlphaGo"
+            },
+            "2020": {
+                "year": "2020",
+                "event": "GPT-3 generates text that is indistinguishable from human-written text.",
+                "wiki_link": "https://en.wikipedia.org/wiki/GPT-3"
+            },
+            "2021": {
+                "year": "2021",
+                "event": "AI weather forecasting is becoming more accurate and useful for disaster warning.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Weather_forecasting"
+            },
+            "2022": {
+                "year": "2022",
+                "event": "Artificial intelligence is starting to play a key role in helping startups save costs.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Startup_costs"
+            },
+            "2023": {
+                "year": "2023",
+                "event": "Growing interest in artificial intelligence in professional and educational contexts.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence_in_business"
+            },
+            "2024": {
+                "year": "2024",
+                "event": "Artificial intelligence is expected to play an even more significant role in business and education.",
+                "wiki_link": "https://en.wikipedia.org/wiki/Artificial_intelligence_in_business"
+            },
+            "h2": "History of AI"
+        },
+        "WhatIsAi": {
+            "h2": "What is AI",
+            "definition": {
+                "name": "Artificial Intelligence (AI)",
+                "definition": " is the ability of machines to think, learn and act like humans."
+            }
+        },
+        "WhereIsUsed": {
+            "h2": "Where is AI used?",
+            "bento-items": {
+                "health": {
+                    "title": "Healthcare",
+                    "description": "Plunge into a world where diseases become history and life expectancy reaches unprecedented heights."
+                },
+                "educaion": {
+                    "title": "Education",
+                    "description": "Experience the incredible power of personalized learning with AI."
+                },
+                "transport": {
+                    "title": "Transport",
+                    "description": "Speed ​​along the roads of the future in autonomous vehicles that take you anywhere in comfort and speed."
+                },
+                "manufacturing": {
+                    "title": "Production",
+                    "description": "Optimize processes and minimize waste with AI that takes the future of manufacturing one step further"
+                },
+                "fun": {
+                    "title": "Entertainment",
+                    "description": "Immerse yourself in immersive AI-generated stories that will take you to worlds where fantasy becomes reality."
+                },
+                "art": {
+                    "title": "Art",
+                    "description": "Experience masterpieces created by AI that blur the line between machine and creator."
+                },
+                "bio": {
+                    "title": "Biotechnology",
+                    "description": "Decipher the code of life and discover new treatments that will defeat the diseases of the past."
+                }
+            },
+            "more": "more"
+        },
+        "HowDoesItWork": {
+            "h2": "How AI works",
+            "layers": {
+                "1": {
+                    "title": "Input layer",
+                    "description": "This is the first layer that accepts inputs such as images or text. "
+                },
+                "2": {
+                    "title": "Hidden layers",
+                    "description": "Hidden layers analyze the input data, applying weights to determine the importance of aspects of the data, allowing the network to learn and draw conclusions"
+                },
+                "3": {
+                    "title": "Output layer",
+                    "description": "The output layer produces predictions or outputs using information from hidden layers to generate the final result."
+                }
+            }
+        }
+    },
+    "Sections.GettingStarted.stage": "Stage"
+}

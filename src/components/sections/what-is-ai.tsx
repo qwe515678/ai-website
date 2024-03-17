@@ -3,7 +3,7 @@ import H2 from "../ui/H2";
 
 
 export default function WhatIsAi() {
-  const t:any = useTranslations()
+  const t = useTranslations()
   return (
     <div className="flex flex-col gap-4">
       <H2 href="#what-is-ai">{t('Sections.WhatIsAi.h2')}</H2>

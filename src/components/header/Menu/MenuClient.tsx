@@ -11,9 +11,10 @@ type MenuClientItemType = {
 };
 type MenuClientType = {
   data: MenuClientItemType[];
+  map: string;
 };
 
-export default function MenuClient({ data }: MenuClientType) {
+export default function MenuClient({ data, map }: MenuClientType) {
   const [isOpen, setIsOpen] = useState(false);
   const bgBlurContext = useContext(BgBlurContext);
   const popupRef = useRef<HTMLDivElement>(null);
@@ -46,7 +47,7 @@ export default function MenuClient({ data }: MenuClientType) {
           setIsOpen(true);
         }}
       >
-        карта
+        {map}
       </Button>
       <AnimatePresence>
         {isOpen && (
@@ -84,11 +85,11 @@ export default function MenuClient({ data }: MenuClientType) {
                       }}
                       style={{
                         filter:
-                          (hoverIndex === index )|| !isMenuHovered
+                          hoverIndex === index || !isMenuHovered
                             ? "blur(0px) opacity(1)"
                             : "blur(2px) opacity(0.5)",
                       }}
-                      className="transition"
+                      className="transition ease-linear"
                       transition={{ delay: index * 0.2 }}
                       onMouseEnter={() => setHoverIndex(index)}
                       onMouseLeave={() => setHoverIndex(-1)}

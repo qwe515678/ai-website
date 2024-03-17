@@ -1,13 +1,23 @@
 "use client";
 
-import data from "@/lib/data";
 import Code from "./Code";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-interface Iquickstart {}
+interface Iquickstart {
+  data: {
+    langIcon: JSX.Element;
+    stage: string;
+    codeInfo: {
+      description: string;
+      code: string;
+      name: string;
+      codeHighlighted: JSX.Element;
+    }[];
+  };
+}
 
-export default function Quickstart({}: Iquickstart) {
+export default function Quickstart({ data }: Iquickstart) {
   const [currentNumber, setCurrentNumber] = useState(0);
   useEffect(() => {
     setCurrentNumber(0);
@@ -21,7 +31,7 @@ export default function Quickstart({}: Iquickstart) {
       </div>
 
       <div className=" w-full border-l-2 pl-4 transition lg:border-none lg:pl-0">
-        {data["getting-started"].snippets.codeInfo.map(
+        {data.codeInfo.map(
           (
             obj: {
               code: string;
@@ -34,11 +44,12 @@ export default function Quickstart({}: Iquickstart) {
             return (
               <div key={i} className="lg:min-h-[80vh] ">
                 <Code
-                  icon={data["getting-started"].snippets.langIcon}
+                  icon={data.langIcon}
                   obj={obj}
                   i={i}
                   setCurrentNumber={setCurrentNumber}
                   currentNumber={currentNumber}
+                  stage={data.stage}
                 >
                   {obj.codeHighlighted}
                 </Code>

@@ -1,7 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/Button";
 import H2 from "@/components/ui/H2";
-import data from "@/lib/data";
 import {
   AnimatePresence,
   motion,
@@ -11,7 +9,16 @@ import {
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-export default function HowDoesItWork() {
+export default function HowDoesItWorkClient({
+  data,
+  h2,
+}: {
+  data: {
+    name: string;
+    description: string;
+  }[];
+  h2: string;
+}) {
   function GetCurrentCardIndex(frac: number, all: number) {
     return Number(((all - 1) * frac).toFixed(0));
   }
@@ -49,12 +56,12 @@ export default function HowDoesItWork() {
       id="how-does-it-work"
       style={{ height: "400dvh" }}
     >
-      <H2 href="#how-works">Как работает ИИ</H2>
+      <H2 href="#how-works">{h2}</H2>
       <div className="sticky top-[25dvh] ">
         <div className="relative flex flex-col-reverse items-center justify-center gap-36 pb-20 xs:pb-4 lg:flex-row">
           <ul className="lg:min-w-1/2 relative flex w-full max-w-xl items-center justify-center">
             <AnimatePresence>
-              {data["how-it-works"].layers.map((layer, i) => {
+              {data.map((layer, i) => {
                 if (i === currentCard) {
                   return (
                     <motion.li

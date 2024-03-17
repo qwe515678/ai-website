@@ -41,10 +41,11 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
-button, cursor-pointer, a {
+button,
+.cursor-pointer,
+a {
   cursor: none;
 }
 .border-gradient-top-right {
-  border-image: linear-gradient(to right, #48BB78 0%, #3B82F6 100%) 1;
- }
- 
+  border-image: linear-gradient(to right, #48bb78 0%, #3b82f6 100%) 1;
+}
