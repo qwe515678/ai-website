@@ -1,7 +1,7 @@
 "use client";
 
 import Code from "./Code";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface Iquickstart {
@@ -67,9 +67,9 @@ function Number({ number }: { number: number }) {
     <AnimatePresence>
       <motion.div
         key={number}
-        initial={{ opacity: 0, y: 200 }} // начальное состояние
-        animate={{ opacity: 1, y: 0 }} // конечное состояние
-        exit={{ opacity: 0, y: -200 }} // анимация выхода
+        initial={{ y: 200 }} // начальное состояние
+        animate={{ y: 0 }} // конечное состояние
+        exit={{ y: -200, transition: { duration: 0.2 } }}
         className="w-0"
       >
         {number + 1}

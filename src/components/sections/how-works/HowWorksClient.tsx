@@ -7,7 +7,7 @@ import {
   useScroll,
 } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 export default function HowDoesItWorkClient({
   data,
@@ -56,29 +56,25 @@ export default function HowDoesItWorkClient({
       id="how-does-it-work"
       style={{ height: "400dvh" }}
     >
-      <H2 href="#how-works" >{h2}</H2>
+      <H2 href="#how-works">{h2}</H2>
       <div className="sticky top-[25dvh] ">
         <div className="relative flex flex-col-reverse items-center justify-center gap-20 pb-20 xs:pb-4 lg:flex-row">
           <ul className="lg:min-w-1/2 relative flex w-full max-w-xl items-center justify-center">
             <AnimatePresence>
-              {data.map((layer, i) => {
-                if (i === currentCard) {
-                  return (
-                    <motion.li
-                      exit={{ opacity: 0, y: 10 }}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      key={layer.name}
-                      className={`flex-0 absolute my-auto flex w-full flex-col items-start justify-center gap-3 rounded-xl ${i !== currentCard && "hidden"} transition-colors md:text-justify lg:p-5`}
-                    >
-                      <p className="text-xl font-bold text-pink-500">
-                        {layer.name}
-                      </p>
-                      <p className="break-all">{layer.description}</p>
-                    </motion.li>
-                  );
-                }
-              })}
+              {data.map((layer, i) => (
+                <motion.li
+                  key={`${layer.name}-${i}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: i === currentCard ? 1 : 0, y: i === currentCard ? 0 : 10 }}
+                  exit={{ opacity: 0, y: 10, transition: { duration: 0.5 } }}
+                  className={`flex-0 absolute my-auto flex w-full flex-col items-start justify-center gap-3 rounded-xl transition-colors md:text-justify lg:p-5`}
+                >
+                  <p className="text-xl font-bold text-pink-500">
+                    {layer.name}
+                  </p>
+                  <p className="break-all">{layer.description}</p>
+                </motion.li>
+              ))}
             </AnimatePresence>
           </ul>
           <div className="relative hidden xs:block">

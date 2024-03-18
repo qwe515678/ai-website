@@ -2,7 +2,7 @@
 
 import useClipboard from "react-use-clipboard";
 import { type ReactNode, Dispatch, SetStateAction } from "react";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion,  } from "framer-motion";
 import { LuCopy } from "react-icons/lu";
 import { MdOutlineDone } from "react-icons/md";
 import { variants } from "@/lib/data";
@@ -106,4 +106,4 @@ export default function Code({
       </div>
     </motion.div>
   );
-}
+} 
