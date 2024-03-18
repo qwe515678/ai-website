@@ -17,6 +17,7 @@
 }
 
 body {
+  @apply text-xs xs:text-sm sm:text-base;
   cursor: none;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

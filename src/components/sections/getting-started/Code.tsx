@@ -9,6 +9,7 @@ import { variants } from "@/lib/data";
 
 import { FaSquareFull } from "react-icons/fa6";
 import Link from "next/link";
+import SetMouseState from "@/components/ui/SetMouseState";
 type CodeProps = {
   children: ReactNode;
   icon: ReactNode;
@@ -16,7 +17,7 @@ type CodeProps = {
   i: number;
   currentNumber: number;
   setCurrentNumber: Dispatch<SetStateAction<number>>;
-  stage: string
+  stage: string;
 };
 export default function Code({
   children,
@@ -63,40 +64,42 @@ export default function Code({
             <span>{obj.name}</span>
           </span>
           <span>
-            <motion.button
-              onClick={setCopied}
-              className={` ${!isCoppied && "lg:opacity-0"} scale-100 text-xl transition hover:scale-95 group-hover:opacity-100`}
-            >
-              <AnimatePresence mode="popLayout">
-                {isCoppied ? (
-                  <motion.div
-                    variants={variants.copyVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    key="done"
-                    className=""
-                  >
-                    <MdOutlineDone />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    variants={variants.copyVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    key="copy"
-                    className=""
-                  >
-                    <LuCopy />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button>
+            <SetMouseState>
+              <motion.button
+                onClick={setCopied}
+                className={` ${!isCoppied && "lg:opacity-0"} scale-100 text-xl transition hover:scale-95 group-hover:opacity-100`}
+              >
+                <AnimatePresence mode="popLayout">
+                  {isCoppied ? (
+                    <motion.div
+                      variants={variants.copyVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      key="done"
+                      className=""
+                    >
+                      <MdOutlineDone />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      variants={variants.copyVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      key="copy"
+                      className=""
+                    >
+                      <LuCopy />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
+            </SetMouseState>
           </span>
         </div>
         <div className={` group relative my-2 `}>
-          <div className="max-w-xl flex-col overflow-x-scroll code-scroll text-nowrap md:px-3 md:py-1">
+          <div className="code-scroll max-w-xl flex-col overflow-x-scroll text-nowrap md:px-3 md:py-1">
             {children}
           </div>
         </div>

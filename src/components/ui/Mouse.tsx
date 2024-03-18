@@ -10,15 +10,11 @@ export default function Mouse() {
     x: useMotionValue(0),
     y: useMotionValue(0),
   };
+  const lerp = (x: number, y: number, a: number) => x * (1 - a) + y * a;
 
-  //Smooth out the mouse values
-  const smoothMouse = {
-    x: useSpring(mouse.x, { stiffness: 1000, damping: 100 }),
-    y: useSpring(mouse.y, { stiffness: 1000, damping: 100 }),
-  };
   function mouseMove(e: any) {
-    mouse.x.set(e.clientX - cursorSize / 2);
-    mouse.y.set(e.clientY - cursorSize / 2);
+    mouse.x.set(lerp(mouse.x.get(), e.clientX - cursorSize / 2, 1));
+    mouse.y.set(lerp(mouse.y.get(), e.clientY - cursorSize / 2, 1));
   }
   useEffect(() => {
     window.addEventListener("mousemove", mouseMove);

@@ -14,6 +14,6 @@ export default function App() {
       style={{
         scaleX: smoothProgress,
       }}
-    ></motion.div>
+    />
   );
 }

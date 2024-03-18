@@ -56,9 +56,9 @@ export default function HowDoesItWorkClient({
       id="how-does-it-work"
       style={{ height: "400dvh" }}
     >
-      <H2 href="#how-works">{h2}</H2>
+      <H2 href="#how-works" >{h2}</H2>
       <div className="sticky top-[25dvh] ">
-        <div className="relative flex flex-col-reverse items-center justify-center gap-36 pb-20 xs:pb-4 lg:flex-row">
+        <div className="relative flex flex-col-reverse items-center justify-center gap-20 pb-20 xs:pb-4 lg:flex-row">
           <ul className="lg:min-w-1/2 relative flex w-full max-w-xl items-center justify-center">
             <AnimatePresence>
               {data.map((layer, i) => {
@@ -74,7 +74,7 @@ export default function HowDoesItWorkClient({
                       <p className="text-xl font-bold text-pink-500">
                         {layer.name}
                       </p>
-                      <p>{layer.description}</p>
+                      <p className="break-all">{layer.description}</p>
                     </motion.li>
                   );
                 }
