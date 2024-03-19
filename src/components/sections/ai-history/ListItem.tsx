@@ -26,7 +26,7 @@ export default function ListItem({ year, event, wiki_link }: IListItem) {
             {year}
           </p>
           <div className="flex">
-            <div className="min-w-[2px] translate-x-1 scale-x-0 scale-y-75 rounded bg-gradient-to-tr from-green-300 to-blue-300 pl-1 opacity-0 transition delay-75 group-hover:scale-100 group-hover:opacity-100" />
+            <div className="min-w-[2px] translate-x-1 scale-x-0 scale-y-75 rounded bg-gradient-to-tr from-pink-600 to-pink-400 pl-1 opacity-0 transition delay-75 group-hover:scale-100 group-hover:opacity-100" />
             <p className="pl-1 transition delay-75 group-hover:translate-x-2">
               {event}
             </p>

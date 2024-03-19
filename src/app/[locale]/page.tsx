@@ -1,13 +1,13 @@
 import Hero from "@/components/hero/hero";
 import AiHistory from "@/components/sections/ai-history/ai-history";
 import GettingStarted from "@/components/sections/getting-started/getting-started";
-import WhatIsAI from "@/components/sections/what-is-ai";
+import WhatIsAI from "@/components/sections/what-is-ai/what-is-ai";
 import WhereIsUsed from "@/components/sections/where-is-used/where-is-used";
-
 import { cn } from "@/lib/cn";
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import HowDoesItWork from "@/components/sections/how-works/HowWorksServer";
+import WhatNext from "@/components/sections/what-next/what-next-server";
 export default function Home() {
   const t = useTranslations();
   return (
@@ -27,8 +27,11 @@ export default function Home() {
       <Section>
         <GettingStarted />
       </Section>
-      <Section className="">
+      <Section >
         <HowDoesItWork />
+      </Section>
+      <Section className="">
+        <WhatNext />
       </Section>
     </div>
   );

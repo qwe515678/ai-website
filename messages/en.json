@@ -8,7 +8,6 @@
             "4": "Quickstart",
             "5": "How it works",
             "Map": "map"
-
         }
     },
     "Sections": {
@@ -198,7 +197,32 @@
                     "description": "The output layer produces predictions or outputs using information from hidden layers to generate the final result."
                 }
             }
+        },
+        "WhatNext": {
+            "h2": "Next steps",
+            "description": "Now, when we've covered the basics, let's take a look at the next steps.",
+            "data": {
+                "1": {
+                    "title": "Introduction to Python",
+                    "description": "Learn the basics of Python programming."
+                },
+                "2": {
+                    "title": "TensorFlow Basics",
+                    "description": "Get started with TensorFlow for machine learning."
+                },
+                "3": {
+                    "title": "Deep Learning Fundamentals",
+                    "description": "Dive into the core concepts of deep learning."
+                },
+                "4": {
+                    "title": "Advanced AI Projects",
+                    "description": "Work on real-world AI projects to enhance your skills."
+                },
+                "5": {
+                    "title": "AI Community and Networking",
+                    "description": "Join the AI community to share knowledge and collaborate."
+                }
+            }
         }
-    },
-    "Sections.GettingStarted.stage": "Stage"
+    }
 }

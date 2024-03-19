@@ -97,7 +97,7 @@ function Skeleton({
       {...props}
     >
       <Image
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-30 z-[30] pointer-events-none"
         src="/noise.svg"
         width={500}
         height={250}

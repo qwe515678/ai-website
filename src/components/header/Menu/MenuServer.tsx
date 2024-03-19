@@ -9,6 +9,7 @@ export default function MenuServer() {
     { name: t("3"), href: "#where-is-used" },
     { name: t("4"), href: "#quickstart" },
     { name: t("5"), href: "#how-works" },
+    { name: "Next steps", href: "#what-next" },
   ];
   return <MenuClient data={data} map={t("Map")} />;
 }

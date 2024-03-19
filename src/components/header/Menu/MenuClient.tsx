@@ -1,8 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/Button";
+import SetMouseState from "@/components/ui/SetMouseState";
 import { BgBlurContext } from "@/components/ui/providers";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { useContext, useState, useRef, useEffect } from "react";
 
 type MenuClientItemType = {
@@ -73,45 +73,47 @@ export default function MenuClient({ data, map }: MenuClientType) {
               >
                 {data.map((item: MenuClientItemType, index: number) => {
                   return (
-                    <motion.li
-                      key={index}
-                      initial={{
-                        opacity: 0,
-                        x: -10,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        x: 0,
-                      }}
-                      style={{
-                        filter:
-                          hoverIndex === index || !isMenuHovered
-                            ? "blur(0px) opacity(1)"
-                            : "blur(2px) opacity(0.5)",
-                      }}
-                      className="transition ease-linear"
-                      transition={{ delay: index * 0.2 }}
-                      onMouseEnter={() => setHoverIndex(index)}
-                      onMouseLeave={() => setHoverIndex(-1)}
-                    >
-                      <button
-                        className="font-semibold"
-                        onClick={() => {
-                          setIsOpen(false);
-                          bgBlurContext?.setBgBlur(false);
-                          console.log(item.href);
-                          const element = document.getElementById(
-                            item.href.slice(1),
-                          );
-                          element?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                          });
+                    <SetMouseState>
+                      <motion.li
+                        key={index}
+                        initial={{
+                          opacity: 0,
+                          x: -10,
                         }}
+                        animate={{
+                          opacity: 1,
+                          x: 0,
+                        }}
+                        style={{
+                          filter:
+                            hoverIndex === index || !isMenuHovered
+                              ? "blur(0px) opacity(1)"
+                              : "blur(2px) opacity(0.5)",
+                        }}
+                        className="transition ease-linear"
+                        transition={{ delay: index * 0.2 }}
+                        onMouseEnter={() => setHoverIndex(index)}
+                        onMouseLeave={() => setHoverIndex(-1)}
                       >
-                        {item.name}
-                      </button>
-                    </motion.li>
+                        <button
+                          className="font-semibold"
+                          onClick={() => {
+                            setIsOpen(false);
+                            bgBlurContext?.setBgBlur(false);
+                            console.log(item.href);
+                            const element = document.getElementById(
+                              item.href.slice(1),
+                            );
+                            element?.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start",
+                            });
+                          }}
+                        >
+                          {item.name}
+                        </button>
+                      </motion.li>
+                    </SetMouseState>
                   );
                 })}
               </motion.ul>

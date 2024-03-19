@@ -1,13 +1,13 @@
 {
   "Ui": {
-    "Prolong": "Mehr",
+    "Prolong": "mehr",
     "Menu": {
       "1": "Was ist KI?",
       "2": "Geschichte der KI",
       "3": "Wo wird es verwendet?",
       "4": "Schnellstart",
       "5": "Wie es funktioniert",
-      "Map": "karte"
+      "Map": "Karte"
     }
   },
   "Sections": {
@@ -168,7 +168,7 @@
         },
         "fun": {
           "title": "Unterhaltung",
-          "description": "Tauchen Sie ein in fesselnde KI-generierte Geschichten, die Sie in Welten entführen, in denen Fantasie zur Realität wird."
+          "description": "Tauchen Sie ein in fesselnde KI-generierte Geschichten, die Sie in Welten entführen, in denen Fantasie Wirklichkeit wird."
         },
         "art": {
           "title": "Kunst",
@@ -176,10 +176,10 @@
         },
         "bio": {
           "title": "Biotechnologie",
-          "description": "Entschlüsseln Sie den Code des Lebens und entdecken Sie neue Behandlungen, die die Krankheiten der Vergangenheit besiegen."
+          "description": "Entschlüsseln Sie den Code des Lebens und entdecken Sie neue Behandlungsmethoden, die die Krankheiten der Vergangenheit besiegen."
         }
       },
-      "more": "noch"
+      "more": "mehr"
     },
     "HowDoesItWork": {
       "h2": "Wie KI funktioniert",
@@ -194,10 +194,35 @@
         },
         "3": {
           "title": "Ausgabeebene",
-          "description": "Die Ausgabeschicht erstellt Vorhersagen oder Ausgaben unter Verwendung von Informationen aus verborgenen Schichten, um das Endergebnis zu generieren."
+          "description": "Die Ausgabeschicht erzeugt Vorhersagen oder Ausgaben unter Verwendung von Informationen aus verborgenen Schichten, um das Endergebnis zu generieren."
+        }
+      }
+    },
+    "WhatNext": {
+      "h2": "Nächste Schritte",
+      "description": "Nachdem wir uns nun mit den Grundlagen befasst haben, werfen wir einen Blick auf die nächsten Schritte.",
+      "data": {
+        "1": {
+          "title": "Einführung in Python",
+          "description": "Lernen Sie die Grundlagen der Python-Programmierung."
+        },
+        "2": {
+          "title": "TensorFlow-Grundlagen",
+          "description": "Beginnen Sie mit TensorFlow für maschinelles Lernen."
+        },
+        "3": {
+          "title": "Grundlagen des Deep Learning",
+          "description": "Tauchen Sie ein in die Kernkonzepte des Deep Learning."
+        },
+        "4": {
+          "title": "Fortgeschrittene KI-Projekte",
+          "description": "Arbeiten Sie an realen KI-Projekten, um Ihre Fähigkeiten zu verbessern."
+        },
+        "5": {
+          "title": "KI-Community und Networking",
+          "description": "Treten Sie der KI-Community bei, um Wissen auszutauschen und zusammenzuarbeiten."
         }
       }
     }
-  },
-  "Sections.GettingStarted.stage": "Bühne"
+  }
 }

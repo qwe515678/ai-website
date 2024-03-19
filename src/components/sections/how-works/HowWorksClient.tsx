@@ -52,9 +52,8 @@ export default function HowDoesItWorkClient({
   return (
     <div
       ref={ref}
-      className=" "
+      className="h-[400vh]"
       id="how-does-it-work"
-      style={{ height: "400dvh" }}
     >
       <H2 href="#how-works">{h2}</H2>
       <div className="sticky top-[25dvh] ">
@@ -67,7 +66,7 @@ export default function HowDoesItWorkClient({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: i === currentCard ? 1 : 0, y: i === currentCard ? 0 : 10 }}
                   exit={{ opacity: 0, y: 10, transition: { duration: 0.5 } }}
-                  className={`flex-0 absolute my-auto flex w-full flex-col items-start justify-center gap-3 rounded-xl transition-colors md:text-justify lg:p-5`}
+                  className={`flex-0 absolute my-auto flex w-full flex-col items-start justify-center gap-3 rounded-xl transition-colors md:text-justify lg:p-5 bg-black`}
                 >
                   <p className="text-xl font-bold text-pink-500">
                     {layer.name}

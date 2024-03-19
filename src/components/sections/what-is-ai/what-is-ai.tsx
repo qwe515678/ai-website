@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import H2 from "../ui/H2";
+import H2 from "../../ui/H2";
 
 
 export default function WhatIsAi() {
