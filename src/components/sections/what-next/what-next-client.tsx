@@ -1,6 +1,5 @@
 "use client";
 import SetMouseState from "@/components/ui/SetMouseState";
-import useWindowSizes from "@/lib/useWindowSizes";
 import { motion } from "framer-motion";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 
@@ -15,14 +14,13 @@ interface WhatNextCarouselProps {
   }[];
 }
 
-
-export default function WhatNextCarousel({data}: WhatNextCarouselProps) {
+export default function WhatNextCarousel({ data }: WhatNextCarouselProps) {
   const containerRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const numberOfSlides = data.length;
   const [containerWidth, setContainerWidth] = useState(0);
   useEffect(() => {
     setContainerWidth(containerRef.current?.offsetWidth || 0);
-  });
+  }, [containerWidth]);
   const slideWidth = containerWidth * 0.9;
   return (
     <div

@@ -73,9 +73,8 @@ export default function MenuClient({ data, map }: MenuClientType) {
               >
                 {data.map((item: MenuClientItemType, index: number) => {
                   return (
-                    <SetMouseState>
+                    <SetMouseState key={index}>
                       <motion.li
-                        key={index}
                         initial={{
                           opacity: 0,
                           x: -10,
