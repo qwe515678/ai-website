@@ -27,7 +27,7 @@ export default function Home() {
       <Section>
         <GettingStarted />
       </Section>
-      <Section >
+      <Section>
         <HowDoesItWork />
       </Section>
       <Section className="">
@@ -43,7 +43,10 @@ function Section({
 }: { children?: ReactNode } & React.HTMLAttributes<HTMLElement>) {
   return (
     <section
-      className={cn("min-h-dvh border-b border-dashed py-4 ", props.className)}
+      className={cn(
+        "min-h-[100vh] border-b border-dashed py-4 ",
+        props.className,
+      )}
       {...props}
     >
       {children}

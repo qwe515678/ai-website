@@ -14,9 +14,11 @@ export default function H2({
       id={href.substring(1)}
       href={href}
       scroll={false}
-      className={cn("group flex items-center justify-start gap-3 py-2", props.className)}
+      className={cn(
+        "group flex items-center justify-start gap-3 py-2",
+        props.className,
+      )}
       {...props}
-
     >
       <h2 className=" break-all text-xl font-bold tracking-wider xs:text-2xl sm:text-3xl">
         {children}

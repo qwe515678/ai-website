@@ -4,7 +4,8 @@ import "./globals.css";
 import ContextProvider from "../components/ui/providers";
 import dynamic from "next/dynamic";
 import ScrollTest from "@/components/ui/scrollProgress";
-import Footer from "@/components/Footer/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 const Mouse = dynamic(() => import("@/components/ui/Mouse"), { ssr: false });
 const montserrat = Unbounded({
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
@@ -29,10 +30,12 @@ export default function RootLayout({
         }
         style={{ background: "black" }}
       >
+        <Analytics />
+        <SpeedInsights />
         <ContextProvider>
           <ScrollTest />
           <Mouse />
-         <div className="">{children}</div>
+          <div className="">{children}</div>
         </ContextProvider>
       </body>
     </html>

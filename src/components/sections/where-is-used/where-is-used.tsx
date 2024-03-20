@@ -111,7 +111,7 @@ function Skeleton({
         width={500}
         height={250}
         alt=""
-        className="max-h-[10dvh] md:hidden"
+        className="max-h-[10vh] md:hidden"
       />
     </div>
   );

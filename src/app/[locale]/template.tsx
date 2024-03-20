@@ -12,7 +12,9 @@ export default function Page({ children }: { children: ReactNode }) {
       initial={{ opacity: 0 }}
       animate={{
         opacity: bgBlurContext?.bgBlur ? 0.5 : 1,
-        filter: bgBlurContext?.bgBlur ? "blur(5px) brightness(0.5)" : "blur(0px) brightness(1)",
+        filter: bgBlurContext?.bgBlur
+          ? "blur(5px) brightness(0.5)"
+          : "blur(0px) brightness(1)",
       }}
       transition={{ duration: 1, delay: 0.1 }}
       className=""
